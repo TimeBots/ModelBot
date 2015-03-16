@@ -36,25 +36,30 @@
     
     for (NSInteger i=0; i< modelKeys.count; i++)
     {
-        NSString *className = NSStringFromClass([jsonValues[i] class]);
         NSString *classProperty = modelKeys[i];
-        NSString *classValue = [jsonValues[i] stringValue];
         
-        //坑爹的判断，为什么都是NSCFString
+        //坑爹的判断，为什么都是NSCFString, NSCFNumber
         if ([jsonValues[i] isKindOfClass:[NSNumber class]])
         {
+            //封装integer类型
             properties = [properties stringByAppendingFormat:@"@property (nonatomic, assign) NSInteger %@;\n",classProperty];
         }
         else if([jsonValues[i] isKindOfClass:[NSString class]])
         {
+            //封装string类型
             properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSString *%@;\n",classProperty];
         }
         else if([jsonValues[i] isKindOfClass:[NSArray class]])
         {
-             properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSArray *%@;\n",classProperty];
+            //封装array类型
+            properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSArray *%@;\n",classProperty];
+        }
+        else if([jsonValues[i] isKindOfClass:[NSDictionary class]])
+        {
+            //封装array类型
+            properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSDictionary *%@;\n",classProperty];
         }
         
-        NSLog(@"class:%@--%@----%s",[jsonValues[i] description],NSStringFromClass([classValue class]),object_getClassName(classValue));
     }
     
     //获取模板地址
