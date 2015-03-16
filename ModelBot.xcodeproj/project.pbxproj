@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B2409F81AB6B192002C7B7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2409F71AB6B192002C7B7B /* AppDelegate.m */; };
+		8B2409FA1AB6B192002C7B7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2409F91AB6B192002C7B7B /* main.m */; };
+		8B2409FC1AB6B192002C7B7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2409FB1AB6B192002C7B7B /* Images.xcassets */; };
+		8B2409FF1AB6B192002C7B7B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2409FD1AB6B192002C7B7B /* MainMenu.xib */; };
+		8B240A0B1AB6B192002C7B7B /* ModelBotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B240A0A1AB6B192002C7B7B /* ModelBotTests.m */; };
+		8B240A161AB6B83A002C7B7B /* JSONParseMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B240A151AB6B83A002C7B7B /* JSONParseMate.m */; };
+		8B240A1C1AB6C50F002C7B7B /* Template_NSObject in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1B1AB6C50F002C7B7B /* Template_NSObject */; };
+		8B240A1E1AB6C520002C7B7B /* Template_MTLModel in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Template_MTLModel */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B240A051AB6B192002C7B7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B2409E91AB6B192002C7B7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B2409F01AB6B192002C7B7B;
+			remoteInfo = ModelBot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8B2409F11AB6B192002C7B7B /* ModelBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModelBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2409F51AB6B192002C7B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B2409F61AB6B192002C7B7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8B2409F71AB6B192002C7B7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8B2409F91AB6B192002C7B7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8B2409FB1AB6B192002C7B7B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8B2409FE1AB6B192002C7B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8B240A041AB6B192002C7B7B /* ModelBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B240A091AB6B192002C7B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B240A0A1AB6B192002C7B7B /* ModelBotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelBotTests.m; sourceTree = "<group>"; };
+		8B240A141AB6B83A002C7B7B /* JSONParseMate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONParseMate.h; path = ../JSONParseMate.h; sourceTree = "<group>"; };
+		8B240A151AB6B83A002C7B7B /* JSONParseMate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONParseMate.m; path = ../JSONParseMate.m; sourceTree = "<group>"; };
+		8B240A1B1AB6C50F002C7B7B /* Template_NSObject */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template_NSObject; sourceTree = "<group>"; };
+		8B240A1D1AB6C520002C7B7B /* Template_MTLModel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template_MTLModel; sourceTree = "<group>"; };
+		8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B2409EE1AB6B192002C7B7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B240A011AB6B192002C7B7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B2409E81AB6B192002C7B7B = {
+			isa = PBXGroup;
+			children = (
+				8B2409F31AB6B192002C7B7B /* ModelBot */,
+				8B240A071AB6B192002C7B7B /* ModelBotTests */,
+				8B2409F21AB6B192002C7B7B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B2409F21AB6B192002C7B7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B2409F11AB6B192002C7B7B /* ModelBot.app */,
+				8B240A041AB6B192002C7B7B /* ModelBotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B2409F31AB6B192002C7B7B /* ModelBot */ = {
+			isa = PBXGroup;
+			children = (
+				8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */,
+				8B240A1A1AB6C45F002C7B7B /* ModelTools */,
+				8B240A191AB6C42A002C7B7B /* JSONParse */,
+				8B240A181AB6C413002C7B7B /* Template */,
+				8B2409F61AB6B192002C7B7B /* AppDelegate.h */,
+				8B2409F71AB6B192002C7B7B /* AppDelegate.m */,
+				8B2409FB1AB6B192002C7B7B /* Images.xcassets */,
+				8B2409FD1AB6B192002C7B7B /* MainMenu.xib */,
+				8B2409F41AB6B192002C7B7B /* Supporting Files */,
+			);
+			path = ModelBot;
+			sourceTree = "<group>";
+		};
+		8B2409F41AB6B192002C7B7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B2409F51AB6B192002C7B7B /* Info.plist */,
+				8B2409F91AB6B192002C7B7B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B240A071AB6B192002C7B7B /* ModelBotTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B240A0A1AB6B192002C7B7B /* ModelBotTests.m */,
+				8B240A081AB6B192002C7B7B /* Supporting Files */,
+			);
+			path = ModelBotTests;
+			sourceTree = "<group>";
+		};
+		8B240A081AB6B192002C7B7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B240A091AB6B192002C7B7B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B240A181AB6C413002C7B7B /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				8B240A1B1AB6C50F002C7B7B /* Template_NSObject */,
+				8B240A1D1AB6C520002C7B7B /* Template_MTLModel */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		8B240A191AB6C42A002C7B7B /* JSONParse */ = {
+			isa = PBXGroup;
+			children = (
+				8B240A141AB6B83A002C7B7B /* JSONParseMate.h */,
+				8B240A151AB6B83A002C7B7B /* JSONParseMate.m */,
+			);
+			path = JSONParse;
+			sourceTree = "<group>";
+		};
+		8B240A1A1AB6C45F002C7B7B /* ModelTools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelTools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B2409F01AB6B192002C7B7B /* ModelBot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B240A0E1AB6B192002C7B7B /* Build configuration list for PBXNativeTarget "ModelBot" */;
+			buildPhases = (
+				8B2409ED1AB6B192002C7B7B /* Sources */,
+				8B2409EE1AB6B192002C7B7B /* Frameworks */,
+				8B2409EF1AB6B192002C7B7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ModelBot;
+			productName = ModelBot;
+			productReference = 8B2409F11AB6B192002C7B7B /* ModelBot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B240A031AB6B192002C7B7B /* ModelBotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B240A111AB6B192002C7B7B /* Build configuration list for PBXNativeTarget "ModelBotTests" */;
+			buildPhases = (
+				8B240A001AB6B192002C7B7B /* Sources */,
+				8B240A011AB6B192002C7B7B /* Frameworks */,
+				8B240A021AB6B192002C7B7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B240A061AB6B192002C7B7B /* PBXTargetDependency */,
+			);
+			name = ModelBotTests;
+			productName = ModelBotTests;
+			productReference = 8B240A041AB6B192002C7B7B /* ModelBotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B2409E91AB6B192002C7B7B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Timebot;
+				TargetAttributes = {
+					8B2409F01AB6B192002C7B7B = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					8B240A031AB6B192002C7B7B = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 8B2409F01AB6B192002C7B7B;
+					};
+				};
+			};
+			buildConfigurationList = 8B2409EC1AB6B192002C7B7B /* Build configuration list for PBXProject "ModelBot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B2409E81AB6B192002C7B7B;
+			productRefGroup = 8B2409F21AB6B192002C7B7B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B2409F01AB6B192002C7B7B /* ModelBot */,
+				8B240A031AB6B192002C7B7B /* ModelBotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B2409EF1AB6B192002C7B7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B2409FC1AB6B192002C7B7B /* Images.xcassets in Resources */,
+				8B240A1C1AB6C50F002C7B7B /* Template_NSObject in Resources */,
+				8B240A1E1AB6C520002C7B7B /* Template_MTLModel in Resources */,
+				8B2409FF1AB6B192002C7B7B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B240A021AB6B192002C7B7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B2409ED1AB6B192002C7B7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B2409FA1AB6B192002C7B7B /* main.m in Sources */,
+				8B240A161AB6B83A002C7B7B /* JSONParseMate.m in Sources */,
+				8B2409F81AB6B192002C7B7B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B240A001AB6B192002C7B7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B240A0B1AB6B192002C7B7B /* ModelBotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B240A061AB6B192002C7B7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B2409F01AB6B192002C7B7B /* ModelBot */;
+			targetProxy = 8B240A051AB6B192002C7B7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B2409FD1AB6B192002C7B7B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B2409FE1AB6B192002C7B7B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B240A0C1AB6B192002C7B7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8B240A0D1AB6B192002C7B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8B240A0F1AB6B192002C7B7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
+				INFOPLIST_FILE = ModelBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8B240A101AB6B192002C7B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
+				INFOPLIST_FILE = ModelBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8B240A121AB6B192002C7B7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ModelBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModelBot.app/Contents/MacOS/ModelBot";
+			};
+			name = Debug;
+		};
+		8B240A131AB6B192002C7B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ModelBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModelBot.app/Contents/MacOS/ModelBot";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B2409EC1AB6B192002C7B7B /* Build configuration list for PBXProject "ModelBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B240A0C1AB6B192002C7B7B /* Debug */,
+				8B240A0D1AB6B192002C7B7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B240A0E1AB6B192002C7B7B /* Build configuration list for PBXNativeTarget "ModelBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B240A0F1AB6B192002C7B7B /* Debug */,
+				8B240A101AB6B192002C7B7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8B240A111AB6B192002C7B7B /* Build configuration list for PBXNativeTarget "ModelBotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B240A121AB6B192002C7B7B /* Debug */,
+				8B240A131AB6B192002C7B7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B2409E91AB6B192002C7B7B /* Project object */;
+}

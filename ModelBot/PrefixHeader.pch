@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  ModelBot
+//
+//  Created by welsonla on 15-3-16.
+//  Copyright (c) 2015年 Timebot. All rights reserved.
+//
+
+#ifndef ModelBot_PrefixHeader_pch
+#define ModelBot_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//定义实体的类型
+typedef enum {
+    ModelType_NSObject,
+    ModelType_MTLModel
+}ModelType;
+
+
+#endif

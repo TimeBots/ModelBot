@@ -1,0 +1,8 @@
+#import "Mantle.h"
+
+@interface %@ : NSObject
+
+@property (nonatomic, assign) NSInteger %@;
+@property (nonatomic, strong) NSString *%@;
+
+@end
