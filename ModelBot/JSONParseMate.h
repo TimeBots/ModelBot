@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <runtime/runtime.h>
+#import <objc/runtime.h>
 
 @interface JSONParseMate : NSObject
 

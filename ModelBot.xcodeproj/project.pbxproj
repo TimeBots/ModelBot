@@ -15,6 +15,7 @@
 		8B240A161AB6B83A002C7B7B /* JSONParseMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B240A151AB6B83A002C7B7B /* JSONParseMate.m */; };
 		8B240A1C1AB6C50F002C7B7B /* Template_NSObject in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1B1AB6C50F002C7B7B /* Template_NSObject */; };
 		8B240A1E1AB6C520002C7B7B /* Template_MTLModel in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Template_MTLModel */; };
+		8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B240A201AB6DE5A002C7B7B /* libobjc.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		8B240A1B1AB6C50F002C7B7B /* Template_NSObject */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template_NSObject; sourceTree = "<group>"; };
 		8B240A1D1AB6C520002C7B7B /* Template_MTLModel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template_MTLModel; sourceTree = "<group>"; };
 		8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		8B240A201AB6DE5A002C7B7B /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 		8B2409E81AB6B192002C7B7B = {
 			isa = PBXGroup;
 			children = (
+				8B240A201AB6DE5A002C7B7B /* libobjc.dylib */,
 				8B2409F31AB6B192002C7B7B /* ModelBot */,
 				8B240A071AB6B192002C7B7B /* ModelBotTests */,
 				8B2409F21AB6B192002C7B7B /* Products */,
@@ -373,6 +377,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
 				INFOPLIST_FILE = ModelBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -385,6 +393,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
 				INFOPLIST_FILE = ModelBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
