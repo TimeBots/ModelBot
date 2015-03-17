@@ -1,0 +1,7 @@
+#import "%@.h"
+
+@implementation %@
+
+%@
+
+@end

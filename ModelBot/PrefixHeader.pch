@@ -13,8 +13,11 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 //模板名称
-#define TemplateMTLModel @"Template_MTLModel"
-#define TemplateNSObject @"Template_NSObject"
+#define HeaderMTLModel @"Header_MTLModel"
+#define HeaderNSObject @"Header_NSObject"
+
+#define SourceNSObject @"Source_NSObject"
+#define SourceMTLModel @"Source_MTLModel"
 
 //定义实体的类型
 typedef enum {

@@ -12,30 +12,19 @@
 
 - (void)generateModelWithName:(NSString *)fileName andType:(ModelType)classType ofJSONContext:(NSDictionary *)jsonDict
 {
-    modelName = fileName;
+    modelName = [fileName capitalizedString];
     modelType = classType;
     
-    switch (modelType) {
-        case ModelType_NSObject:
-            {
-                [self generateHeaderFile:jsonDict];
-            }
-            break;
-        case ModelType_MTLModel:
-            {
-                [self generateHeaderFile:jsonDict];
-            }
-            break;
-        default:
-            break;
-    }
+    //生成header与source文件中的内容
+    [self generateSourceContext:jsonDict];
 }
 
-- (void)generateHeaderFile:(NSDictionary *)jsonDict{
+- (void)generateSourceContext:(NSDictionary *)jsonDict{
     NSArray *modelKeys = jsonDict.allKeys;
     NSArray *jsonValues = jsonDict.allValues;
     
     NSString *properties = @"";
+    NSString *synthesize = @"";
     
     for (NSInteger i=0; i< modelKeys.count; i++)
     {
@@ -63,31 +52,29 @@
             properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSDictionary *%@;\n",classProperty];
         }
         
+        
+        //组装source文件中的数据
+        if (modelType == ModelType_NSObject)
+        {
+            synthesize = [synthesize stringByAppendingFormat:@"@synthesize %@;\n",modelKeys[i]];
+        }
+        else
+        {
+            synthesize = [synthesize stringByAppendingFormat:@"@\"%@\":@\"%@\"",modelKeys[i],modelKeys[i]];
+            if(i!=modelKeys.count-1)
+            {
+                [synthesize stringByAppendingString:@",\n\t\t"];
+            }
+        }
+        
     }
     
-    //获取模板地址
-    NSString *path;
-    if (modelType==ModelType_NSObject)
-    {
-        path = [[NSBundle mainBundle] pathForResource:TemplateNSObject ofType:@"tpl"];
-    }
-    else
-    {
-        path = [[NSBundle mainBundle] pathForResource:TemplateMTLModel ofType:@"tpl"];
-    }
+    [self writeToHeaderFile:properties];
     
-    //读取模板的内容
-    NSString *templateText = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    
-    //拼装模板
-    NSString *context = [NSString stringWithFormat:templateText,modelName,properties];
-    
-    NSLog(@"properties:--- %@",context);
-    [self writeToHeaderFile:context];
-    [self writeToSourceFile:nil];
+    [self writeToSourceFile:synthesize];
 }
 
-- (void)writeToHeaderFile:(NSString *)context
+- (NSString *)getFilePathIsHeader:(BOOL)isHeader
 {
     NSString *deskPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
     NSString *modelDirect = [deskPath stringByAppendingPathComponent:@"Model"];
@@ -101,7 +88,40 @@
     }
     
     //拼接实体的类地址，放到Model文件夹中
-    NSString *filePath = [deskPath stringByAppendingFormat:@"/Model/%@.h",modelName];
+    NSString *filePath ;
+    
+    if (isHeader)
+    {
+        filePath = [deskPath stringByAppendingFormat:@"/Model/%@.h",modelName];
+    }
+    else
+    {
+        filePath = [deskPath stringByAppendingFormat:@"/Model/%@.m",modelName];
+    }
+    
+    return filePath;
+}
+
+- (void)writeToHeaderFile:(NSString *)properties
+{
+    //获取模板地址
+    NSString *path;
+    if (modelType==ModelType_NSObject)
+    {
+        path = [[NSBundle mainBundle] pathForResource:HeaderNSObject ofType:@"tpl"];
+    }
+    else
+    {
+        path = [[NSBundle mainBundle] pathForResource:HeaderMTLModel ofType:@"tpl"];
+    }
+    
+    //读取模板的内容
+    NSString *templateText = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    
+    //拼装模板
+    NSString *context = [NSString stringWithFormat:templateText,modelName,properties];
+   
+    NSString *filePath = [self getFilePathIsHeader:YES];
     
     NSError *error;
     [[context dataUsingEncoding:NSUTF8StringEncoding] writeToFile:filePath atomically:YES];
@@ -111,7 +131,29 @@
 
 - (void)writeToSourceFile:(NSString *)source
 {
+    //获取模板地址
+    NSString *path;
+    if (modelType==ModelType_NSObject)
+    {
+        path = [[NSBundle mainBundle] pathForResource:SourceNSObject ofType:@"tpl"];
+    }
+    else
+    {
+        path = [[NSBundle mainBundle] pathForResource:SourceMTLModel ofType:@"tpl"];
+    }
     
+    //读取模板的内容
+    NSString *templateText = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    
+    //拼装模板
+    NSString *context = [NSString stringWithFormat:templateText,modelName,modelName,source];
+
+    
+    NSString *sourcePath = [self getFilePathIsHeader:NO];
+    
+    NSError *error;
+    [[context dataUsingEncoding:NSUTF8StringEncoding] writeToFile:sourcePath atomically:YES];
+    NSLog(@"WriteError:%@",error.description);
 }
 
 @end

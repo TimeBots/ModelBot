@@ -1,4 +1,4 @@
-#import "Mantle.h"
+#import <Foundation/Foundation.h>
 
 @interface %@ : NSObject
 
