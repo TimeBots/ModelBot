@@ -18,6 +18,9 @@
 		8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B240A201AB6DE5A002C7B7B /* libobjc.dylib */; };
 		8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */; };
 		8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */; };
+		8B92B2E21AB8055600F50595 /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92B2DD1AB8055600F50595 /* NoodleLineNumberMarker.m */; };
+		8B92B2E31AB8055600F50595 /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92B2DF1AB8055600F50595 /* NoodleLineNumberView.m */; };
+		8B92B2E41AB8055600F50595 /* NSTextView+JSDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92B2E11AB8055600F50595 /* NSTextView+JSDExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,12 @@
 		8B240A201AB6DE5A002C7B7B /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
 		8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_NSObject.tpl; sourceTree = "<group>"; };
 		8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_MTLModel.tpl; sourceTree = "<group>"; };
+		8B92B2DC1AB8055600F50595 /* NoodleLineNumberMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberMarker.h; sourceTree = "<group>"; };
+		8B92B2DD1AB8055600F50595 /* NoodleLineNumberMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberMarker.m; sourceTree = "<group>"; };
+		8B92B2DE1AB8055600F50595 /* NoodleLineNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberView.h; sourceTree = "<group>"; };
+		8B92B2DF1AB8055600F50595 /* NoodleLineNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberView.m; sourceTree = "<group>"; };
+		8B92B2E01AB8055600F50595 /* NSTextView+JSDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+JSDExtensions.h"; sourceTree = "<group>"; };
+		8B92B2E11AB8055600F50595 /* NSTextView+JSDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+JSDExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +101,13 @@
 		8B2409F31AB6B192002C7B7B /* ModelBot */ = {
 			isa = PBXGroup;
 			children = (
+				8B2409F61AB6B192002C7B7B /* AppDelegate.h */,
+				8B2409F71AB6B192002C7B7B /* AppDelegate.m */,
 				8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */,
+				8B92B2DA1AB8054D00F50595 /* Library */,
 				8B240A1A1AB6C45F002C7B7B /* ModelTools */,
 				8B240A191AB6C42A002C7B7B /* JSONParse */,
 				8B240A181AB6C413002C7B7B /* Template */,
-				8B2409F61AB6B192002C7B7B /* AppDelegate.h */,
-				8B2409F71AB6B192002C7B7B /* AppDelegate.m */,
 				8B2409FB1AB6B192002C7B7B /* Images.xcassets */,
 				8B2409FD1AB6B192002C7B7B /* MainMenu.xib */,
 				8B2409F41AB6B192002C7B7B /* Supporting Files */,
@@ -156,6 +166,27 @@
 			children = (
 			);
 			path = ModelTools;
+			sourceTree = "<group>";
+		};
+		8B92B2DA1AB8054D00F50595 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8B92B2DB1AB8055600F50595 /* NSTextView+JSDExtensions */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		8B92B2DB1AB8055600F50595 /* NSTextView+JSDExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B92B2DC1AB8055600F50595 /* NoodleLineNumberMarker.h */,
+				8B92B2DD1AB8055600F50595 /* NoodleLineNumberMarker.m */,
+				8B92B2DE1AB8055600F50595 /* NoodleLineNumberView.h */,
+				8B92B2DF1AB8055600F50595 /* NoodleLineNumberView.m */,
+				8B92B2E01AB8055600F50595 /* NSTextView+JSDExtensions.h */,
+				8B92B2E11AB8055600F50595 /* NSTextView+JSDExtensions.m */,
+			);
+			path = "NSTextView+JSDExtensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +294,10 @@
 			files = (
 				8B2409FA1AB6B192002C7B7B /* main.m in Sources */,
 				8B240A161AB6B83A002C7B7B /* JSONParseMate.m in Sources */,
+				8B92B2E41AB8055600F50595 /* NSTextView+JSDExtensions.m in Sources */,
 				8B2409F81AB6B192002C7B7B /* AppDelegate.m in Sources */,
+				8B92B2E31AB8055600F50595 /* NoodleLineNumberView.m in Sources */,
+				8B92B2E21AB8055600F50595 /* NoodleLineNumberMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

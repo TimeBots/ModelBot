@@ -21,7 +21,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    
+    [self initView];
     [self initService];
 }
 
@@ -29,9 +29,16 @@
     // Insert code here to tear down your application
 }
 
+- (void)initView
+{
+    self.jsonTextView.ShowsHighlight = YES;
+    self.jsonTextView.ShowsLineNumbers = YES;
+}
+
 - (void)initService
 {
     jsonMate = [[JSONParseMate alloc] init];
+    jsonMate.delegate = self;
 }
 
 
@@ -71,6 +78,7 @@
         [alert runModal];
         
         [self.classField becomeFirstResponder];
+        
         return NO;
     }
     
@@ -125,4 +133,42 @@
     
     return ModelType_NSObject;
 }
+
+#pragma mark - JSONParseMate Delegate
+- (void)parseMateDidStartGenerateCode
+{
+    self.stateLabel.stringValue = @"Start analytics....";
+}
+
+- (void)parseMateDidFinishGenerateCode
+{
+    self.stateLabel.stringValue = @"Generate success";
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"";
+    alert.informativeText = @"Generate Success";
+    [alert addButtonWithTitle:@"Show In Finder"];
+    [alert addButtonWithTitle:@"View later"];
+    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode==1000)
+        {
+            [self handleShowInFinder];
+        }
+    }];
+}
+
+- (void)handleShowInFinder
+{
+    
+    NSString *deskPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
+    NSString *modelDirect = [deskPath stringByAppendingPathComponent:@"Model"];
+    
+    NSString *className = self.classField.stringValue;
+    
+    NSURL *headerURL = [NSURL fileURLWithPath:[modelDirect stringByAppendingFormat:@"/%@.h",className]];
+    NSURL *sourceURL = [NSURL fileURLWithPath:[modelDirect stringByAppendingFormat:@"/%@.m",className]];
+    [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[headerURL,sourceURL]];
+
+}
+
 @end

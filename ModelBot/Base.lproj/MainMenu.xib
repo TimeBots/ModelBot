@@ -19,6 +19,8 @@
                 <outlet property="jsonTextView" destination="X0E-i5-InR" id="T0d-7k-42a"/>
                 <outlet property="jsonTextview" destination="X0E-i5-InR" id="rfE-pH-Bb0"/>
                 <outlet property="modelMenu" destination="aV3-Sa-6dS" id="QDl-9z-VS0"/>
+                <outlet property="progressIndicator" destination="COQ-n3-0kb" id="z3q-Yi-Pze"/>
+                <outlet property="stateLabel" destination="rHr-Co-Fxt" id="gI8-9d-zaU"/>
                 <outlet property="typePopButton" destination="YPi-Hs-e5D" id="vfs-eZ-qJS"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -673,17 +675,17 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="ModelBot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="ModelBot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="utilityWindow" appearanceType="aqua" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="746" y="458" width="480" height="308"/>
+            <rect key="contentRect" x="746" y="458" width="485" height="361"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="308"/>
+                <rect key="frame" x="0.0" y="0.0" width="485" height="361"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hcE-Nc-qir">
-                        <rect key="frame" x="369" y="13" width="97" height="32"/>
+                        <rect key="frame" x="374" y="32" width="97" height="32"/>
                         <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xzH-bg-Ont">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -693,7 +695,7 @@
                         </connections>
                     </button>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPi-Hs-e5D">
-                        <rect key="frame" x="213" y="17" width="102" height="26"/>
+                        <rect key="frame" x="250" y="36" width="102" height="26"/>
                         <popUpButtonCell key="cell" type="push" title="MTLModel" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="101" imageScaling="proportionallyDown" inset="2" selectedItem="XBm-B1-fMP" id="4fC-cP-nWe">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
@@ -706,20 +708,20 @@
                         </popUpButtonCell>
                     </popUpButton>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="THs-gp-ry3">
-                        <rect key="frame" x="20" y="252" width="440" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Set your class name here" drawsBackground="YES" id="6Hm-uB-1jM">
+                        <rect key="frame" x="20" y="305" width="440" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="Set your class name here" drawsBackground="YES" id="6Hm-uB-1jM">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <scrollView fixedFrame="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzc-wF-yAc">
-                        <rect key="frame" x="20" y="61" width="440" height="166"/>
+                        <rect key="frame" x="20" y="114" width="440" height="166"/>
                         <clipView key="contentView" misplaced="YES" id="gj5-Zf-lXl">
                             <rect key="frame" x="1" y="1" width="223" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="X0E-i5-InR">
+                                <textView importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="X0E-i5-InR">
                                     <rect key="frame" x="0.0" y="0.0" width="223" height="164"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -741,9 +743,20 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-n3-0kb">
+                        <rect key="frame" x="14" y="79" width="16" height="16"/>
+                    </progressIndicator>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Db-YO-eWL">
+                        <rect key="frame" x="36" y="78" width="426" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Ready?" id="rHr-Co-Fxt">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="576" y="540"/>
+            <point key="canvasLocation" x="429.5" y="537.5"/>
         </window>
     </objects>
 </document>

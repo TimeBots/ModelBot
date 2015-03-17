@@ -10,6 +10,8 @@
 
 @implementation JSONParseMate
 
+@synthesize delegate;
+
 - (void)generateModelWithName:(NSString *)fileName andType:(ModelType)classType ofJSONContext:(NSDictionary *)jsonDict
 {
     modelName = [fileName capitalizedString];
@@ -20,6 +22,12 @@
 }
 
 - (void)generateSourceContext:(NSDictionary *)jsonDict{
+    
+    if (delegate && [delegate respondsToSelector:@selector(parseMateDidStartGenerateCode)])
+    {
+        [delegate parseMateDidStartGenerateCode];
+    }
+    
     NSArray *modelKeys = jsonDict.allKeys;
     NSArray *jsonValues = jsonDict.allValues;
     
@@ -30,6 +38,9 @@
     {
         NSString *classProperty = modelKeys[i];
         
+        //---------------------------------
+        //-----------Header Code-----------
+        //---------------------------------
         //坑爹的判断，为什么都是NSCFString, NSCFNumber
         if ([jsonValues[i] isKindOfClass:[NSNumber class]])
         {
@@ -52,7 +63,9 @@
             properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSDictionary *%@;\n",classProperty];
         }
         
-        
+        //---------------------------------
+        //-----------Source Code-----------
+        //---------------------------------
         //组装source文件中的数据
         if (modelType == ModelType_NSObject)
         {
@@ -61,17 +74,25 @@
         else
         {
             synthesize = [synthesize stringByAppendingFormat:@"@\"%@\":@\"%@\"",modelKeys[i],modelKeys[i]];
-            if(i!=modelKeys.count-1)
+            if(i<(modelKeys.count-1))
             {
-                [synthesize stringByAppendingString:@",\n\t\t"];
+               synthesize = [synthesize stringByAppendingString:@",\n\t\t"];
             }
         }
         
     }
     
+    
+    //write to header file
     [self writeToHeaderFile:properties];
     
+    //write to source file
     [self writeToSourceFile:synthesize];
+    
+    if (delegate && [delegate respondsToSelector:@selector(parseMateDidFinishGenerateCode)])
+    {
+        [delegate parseMateDidFinishGenerateCode];
+    }
 }
 
 - (NSString *)getFilePathIsHeader:(BOOL)isHeader
@@ -102,6 +123,11 @@
     return filePath;
 }
 
+/**
+ *  write to header file
+ *
+ *  @param properties NSString
+ */
 - (void)writeToHeaderFile:(NSString *)properties
 {
     //获取模板地址
@@ -128,7 +154,11 @@
     NSLog(@"WriteError:%@",error.description);
 }
 
-
+/**
+ *  write to source code
+ *
+ *  @param source NSString
+ */
 - (void)writeToSourceFile:(NSString *)source
 {
     //获取模板地址
