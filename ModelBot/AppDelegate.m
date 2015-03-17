@@ -31,8 +31,10 @@
 
 - (void)initView
 {
-    self.jsonTextView.ShowsHighlight = YES;
-    self.jsonTextView.ShowsLineNumbers = YES;
+//    self.jsonTextView.ShowsHighlight = YES;
+//    self.jsonTextView.ShowsLineNumbers = YES;
+    self.jsonTextView.delegate = self;
+    [self.jsonTextView.textStorage setFont:[NSFont fontWithName:@"Helvetica" size:16]];
 }
 
 - (void)initService
@@ -59,6 +61,10 @@
         {
             ModelType modelType = [self checkModelType];
             [jsonMate generateModelWithName:fileName andType:modelType ofJSONContext:jsonDict];
+        }
+        else
+        {
+            [self showAert:@"" withMessage:@"This is not a validate JSON string, Please check"];
         }
         
         NSLog(@"isValid:%@",isValid?@"YES":@"NO");
@@ -157,6 +163,15 @@
     }];
 }
 
+- (void)showAert:(NSString *)title withMessage:(NSString *)message
+{
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = title;
+    alert.informativeText = message;
+    [alert addButtonWithTitle:@"OK"];
+    [alert runModal];
+}
+
 - (void)handleShowInFinder
 {
     
@@ -170,5 +185,19 @@
     [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[headerURL,sourceURL]];
 
 }
+
+- (void)handlePaste:(NSEvent *)event
+{
+    NSLog(@"handle paste");
+}
+- (void)pasteboard:(NSPasteboard *)sender provideDataForType:(NSString *)type
+{
+    
+}
+
+- (void)pasteboardChangedOwner:(NSPasteboard *)sender{
+    
+}
+
 
 @end

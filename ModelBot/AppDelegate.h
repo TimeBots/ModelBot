@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import "JSonParseMate.h"
-#import "NSTextView+JSDExtensions.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate,JSONParseDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate,JSONParseDelegate,NSTextViewDelegate,NSTextStorageDelegate>
 
 @property (weak) IBOutlet NSButton    *generateButton;
 @property (weak) IBOutlet NSMenu      *modelMenu;
