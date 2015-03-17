@@ -13,8 +13,8 @@
 		8B2409FF1AB6B192002C7B7B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2409FD1AB6B192002C7B7B /* MainMenu.xib */; };
 		8B240A0B1AB6B192002C7B7B /* ModelBotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B240A0A1AB6B192002C7B7B /* ModelBotTests.m */; };
 		8B240A161AB6B83A002C7B7B /* JSONParseMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B240A151AB6B83A002C7B7B /* JSONParseMate.m */; };
-		8B240A1C1AB6C50F002C7B7B /* Template_NSObject in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1B1AB6C50F002C7B7B /* Template_NSObject */; };
-		8B240A1E1AB6C520002C7B7B /* Template_MTLModel in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Template_MTLModel */; };
+		8B240A1C1AB6C50F002C7B7B /* Template_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1B1AB6C50F002C7B7B /* Template_NSObject.tpl */; };
+		8B240A1E1AB6C520002C7B7B /* Template_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Template_MTLModel.tpl */; };
 		8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B240A201AB6DE5A002C7B7B /* libobjc.dylib */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +41,8 @@
 		8B240A0A1AB6B192002C7B7B /* ModelBotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelBotTests.m; sourceTree = "<group>"; };
 		8B240A141AB6B83A002C7B7B /* JSONParseMate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONParseMate.h; path = ../JSONParseMate.h; sourceTree = "<group>"; };
 		8B240A151AB6B83A002C7B7B /* JSONParseMate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONParseMate.m; path = ../JSONParseMate.m; sourceTree = "<group>"; };
-		8B240A1B1AB6C50F002C7B7B /* Template_NSObject */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template_NSObject; sourceTree = "<group>"; };
-		8B240A1D1AB6C520002C7B7B /* Template_MTLModel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template_MTLModel; sourceTree = "<group>"; };
+		8B240A1B1AB6C50F002C7B7B /* Template_NSObject.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template_NSObject.tpl; sourceTree = "<group>"; };
+		8B240A1D1AB6C520002C7B7B /* Template_MTLModel.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template_MTLModel.tpl; sourceTree = "<group>"; };
 		8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8B240A201AB6DE5A002C7B7B /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -130,8 +130,8 @@
 		8B240A181AB6C413002C7B7B /* Template */ = {
 			isa = PBXGroup;
 			children = (
-				8B240A1B1AB6C50F002C7B7B /* Template_NSObject */,
-				8B240A1D1AB6C520002C7B7B /* Template_MTLModel */,
+				8B240A1B1AB6C50F002C7B7B /* Template_NSObject.tpl */,
+				8B240A1D1AB6C520002C7B7B /* Template_MTLModel.tpl */,
 			);
 			path = Template;
 			sourceTree = "<group>";
@@ -233,8 +233,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2409FC1AB6B192002C7B7B /* Images.xcassets in Resources */,
-				8B240A1C1AB6C50F002C7B7B /* Template_NSObject in Resources */,
-				8B240A1E1AB6C520002C7B7B /* Template_MTLModel in Resources */,
+				8B240A1C1AB6C50F002C7B7B /* Template_NSObject.tpl in Resources */,
+				8B240A1E1AB6C520002C7B7B /* Template_MTLModel.tpl in Resources */,
 				8B2409FF1AB6B192002C7B7B /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +456,7 @@
 				8B240A101AB6B192002C7B7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B240A111AB6B192002C7B7B /* Build configuration list for PBXNativeTarget "ModelBotTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				8B240A131AB6B192002C7B7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

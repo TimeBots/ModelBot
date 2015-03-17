@@ -1,9 +1,0 @@
-#import "Mantle.h"
-#import "MTLModel.h"
-
-@interface %@ : MTLModel<MTLJSONSerializing>
-
-@property (nonatomic, assign) NSInteger %@;
-@property (nonatomic, strong) NSString *%@;
-
-@end

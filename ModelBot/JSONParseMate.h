@@ -10,7 +10,11 @@
 #import <objc/runtime.h>
 
 @interface JSONParseMate : NSObject
+{
+    NSString  *modelName;
+    ModelType  modelType;
+}
 
-- (void)generateModelWithType:(ModelType)modelType ofJSON:(NSDictionary *)jsonDict;
+- (void)generateModelWithName:(NSString *)fileName andType:(ModelType)classType ofJSONContext:(NSDictionary *)jsonDict;
 
 @end

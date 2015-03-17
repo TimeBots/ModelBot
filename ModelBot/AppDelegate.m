@@ -29,28 +29,53 @@
     // Insert code here to tear down your application
 }
 
-- (IBAction)handleGenerate:(id)sender
-{
-    NSLog(@"self.jsonText:%@",self.jsonTextView.string);
-    NSString *json = self.jsonTextView.string;
-    jsonDict = [self convertJSONToDictionary:json];
-    
-    BOOL isValid = [self validateJSON];
-
-    if(isValid)
-    {
-      ModelType modelType = [self checkModelType];
-      [jsonMate generateModelWithType:modelType ofJSON:jsonDict];
-    }
-    
-    NSLog(@"isValid:%@",isValid?@"YES":@"NO");
-}
-
 - (void)initService
 {
     jsonMate = [[JSONParseMate alloc] init];
 }
 
+
+- (IBAction)handleGenerate:(id)sender
+{
+    
+    if ([self checkInput])
+    {
+        NSLog(@"self.jsonText:%@",self.jsonTextView.string);
+        
+        NSString *fileName = self.classField.stringValue;
+        NSString *json = self.jsonTextView.string;
+        jsonDict = [self convertJSONToDictionary:json];
+        
+        BOOL isValid = [self validateJSON];
+        
+        if(isValid)
+        {
+            ModelType modelType = [self checkModelType];
+            [jsonMate generateModelWithName:fileName andType:modelType ofJSONContext:jsonDict];
+        }
+        
+        NSLog(@"isValid:%@",isValid?@"YES":@"NO");
+    }
+    
+   
+}
+
+- (BOOL)checkInput
+{
+    if (self.classField.stringValue.length==0)
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:@"Notice"];
+        [alert setInformativeText:@"Please input the class name in the field"];
+        [alert addButtonWithTitle:@"OK"];
+        [alert runModal];
+        
+        [self.classField becomeFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
 
 /**
  *  检查json是否合法

@@ -10,17 +10,20 @@
 
 @implementation JSONParseMate
 
-- (void)generateModelWithType:(ModelType)modelType ofJSON:(NSDictionary *)jsonDict
+- (void)generateModelWithName:(NSString *)fileName andType:(ModelType)classType ofJSONContext:(NSDictionary *)jsonDict
 {
+    modelName = fileName;
+    modelType = classType;
+    
     switch (modelType) {
         case ModelType_NSObject:
             {
-                [self generateNSObjectFile:jsonDict];
+                [self generateHeaderFile:jsonDict];
             }
             break;
         case ModelType_MTLModel:
             {
-                [self generateNSObjectFile:jsonDict];
+                [self generateHeaderFile:jsonDict];
             }
             break;
         default:
@@ -28,7 +31,7 @@
     }
 }
 
-- (void)generateNSObjectFile:(NSDictionary *)jsonDict{
+- (void)generateHeaderFile:(NSDictionary *)jsonDict{
     NSArray *modelKeys = jsonDict.allKeys;
     NSArray *jsonValues = jsonDict.allValues;
     
@@ -63,16 +66,52 @@
     }
     
     //获取模板地址
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Template_NSObject" ofType:@""];
+    NSString *path;
+    if (modelType==ModelType_NSObject)
+    {
+        path = [[NSBundle mainBundle] pathForResource:TemplateNSObject ofType:@"tpl"];
+    }
+    else
+    {
+        path = [[NSBundle mainBundle] pathForResource:TemplateMTLModel ofType:@"tpl"];
+    }
     
     //读取模板的内容
     NSString *templateText = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     
     //拼装模板
-    NSString *context = [NSString stringWithFormat:templateText,@"ssss",properties];
+    NSString *context = [NSString stringWithFormat:templateText,modelName,properties];
     
+    NSLog(@"properties:--- %@",context);
+    [self writeToHeaderFile:context];
+    [self writeToSourceFile:nil];
+}
+
+- (void)writeToHeaderFile:(NSString *)context
+{
+    NSString *deskPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
+    NSString *modelDirect = [deskPath stringByAppendingPathComponent:@"Model"];
     
-    NSLog(@"properties:%@ --- %@ --- %@",properties,templateText,context);
+    //检查Model文件夹是否存在，不存在进行创建
+    BOOL isDir;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:modelDirect isDirectory:&isDir])
+    {
+        NSLog(@"not exist:%@",modelDirect);
+        [[NSFileManager defaultManager] createDirectoryAtPath:modelDirect withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    //拼接实体的类地址，放到Model文件夹中
+    NSString *filePath = [deskPath stringByAppendingFormat:@"/Model/%@.h",modelName];
+    
+    NSError *error;
+    [[context dataUsingEncoding:NSUTF8StringEncoding] writeToFile:filePath atomically:YES];
+    NSLog(@"WriteError:%@",error.description);
+}
+
+
+- (void)writeToSourceFile:(NSString *)source
+{
+    
 }
 
 @end

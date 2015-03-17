@@ -9,14 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ModelBot/AppDelegate.m"
-            timestampString = "448189827.939061"
+            filePath = "ModelBot/JSONParseMate.m"
+            timestampString = "448254003.26636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "@implementation AppDelegate"
-            landmarkType = "3">
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "-generateModelWithName:andType:ofJSONContext:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ModelBot/JSONParseMate.m"
-            timestampString = "448189404.307536"
+            timestampString = "448254003.26636"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "-generateModelWithType:ofJSON:"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-generateHeaderFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModelBot/JSONParseMate.m"
+            timestampString = "448254003.26636"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-writeToHeaderFile:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ModelBot/AppDelegate.m"
-            timestampString = "448189437.895026"
+            timestampString = "448254040.202863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "-handleGenerate:"
             landmarkType = "5">
          </BreakpointContent>
@@ -57,29 +73,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ModelBot/JSONParseMate.m"
-            timestampString = "448189453.047685"
+            filePath = "ModelBot/AppDelegate.m"
+            timestampString = "448254041.054395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-generateNSObjectFile:"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-handleGenerate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ModelBot/JSONParseMate.m"
-            timestampString = "448189708.781157"
+            timestampString = "448254070.415354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-generateNSObjectFile:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-generateHeaderFile:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,11 +12,16 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+//模板名称
+#define TemplateMTLModel @"Template_MTLModel"
+#define TemplateNSObject @"Template_NSObject"
+
 //定义实体的类型
 typedef enum {
     ModelType_NSObject,
     ModelType_MTLModel
 }ModelType;
+
 
 
 #endif
