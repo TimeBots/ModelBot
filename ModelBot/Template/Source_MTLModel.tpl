@@ -5,8 +5,7 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
-    return
-    @{
+    return @{
         %@
     };
 }
