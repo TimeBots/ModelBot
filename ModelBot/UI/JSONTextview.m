@@ -45,27 +45,31 @@
 {
     NSLog(@"past in textview");
     
-    self.string = @"";
     
     NSPasteboard *pastboard = [NSPasteboard generalPasteboard];
-    NSString* jsonString = [pastboard  stringForType:NSPasteboardTypeString];
+    NSString *jsonString = [pastboard  stringForType:NSPasteboardTypeString];
+    
+    if (jsonString.length==0)
+    {
+        return;
+    }
+    
     
     id JSONObj = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];
     
     if ([NSJSONSerialization isValidJSONObject:JSONObj])
     {
-        // create the JSONSyntaxHighilight Object
-        JSONSyntaxHighlight *jsh = [[JSONSyntaxHighlight alloc] initWithJSON:JSONObj];
+        self.richText = YES;
         
-        // place the text into the view
-        self.string = @"\n";
-        NSMutableAttributedString *jsonString = [[jsh highlightJSON] mutableCopy];
-//        [jsonString setAttributedString:@{(NSString *)NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:16]}];
-//        [jsonString setAttributes:@{NSFontAttributeName:[NSFont fontWithName:@"Hei" size:16]} range:NSRangeFromString(jsonString.string)];
-        [self insertText:jsonString];
+        JSONSyntaxHighlight *jsonSytax = [[JSONSyntaxHighlight alloc] initWithJSON:JSONObj];
+        NSMutableAttributedString *jsonAttributedString = [[jsonSytax highlightJSON] mutableCopy];
+        [self.textStorage setAttributedString:jsonAttributedString];
     }
     else
     {
+        self.richText = NO;
+        self.textColor = [NSColor purpleColor];
+        self.font = [NSFont fontWithName:@"Monaco" size:16];
         [NSApp sendAction:@selector(paste:) to:[[self window] firstResponder] from:self];
     }
     

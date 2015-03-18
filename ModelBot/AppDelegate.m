@@ -49,6 +49,8 @@
     
     if ([self checkInput])
     {
+        self.stateLabel.textColor = [NSColor blackColor];
+        
         NSLog(@"self.jsonText:%@",self.jsonTextView.string);
         
         NSString *fileName = self.classField.stringValue;
@@ -149,6 +151,7 @@
 - (void)parseMateDidFinishGenerateCode
 {
     self.stateLabel.stringValue = @"Generate success";
+    self.stateLabel.textColor = [NSColor colorWithCalibratedRed:39/255.0f green:174/255.0f blue:96/255.0f alpha:1.0];
     
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = @"";
@@ -184,19 +187,6 @@
     NSURL *sourceURL = [NSURL fileURLWithPath:[modelDirect stringByAppendingFormat:@"/%@.m",className]];
     [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[headerURL,sourceURL]];
 
-}
-
-- (void)handlePaste:(NSEvent *)event
-{
-    NSLog(@"handle paste");
-}
-- (void)pasteboard:(NSPasteboard *)sender provideDataForType:(NSString *)type
-{
-    
-}
-
-- (void)pasteboardChangedOwner:(NSPasteboard *)sender{
-    
 }
 
 

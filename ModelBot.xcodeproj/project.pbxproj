@@ -16,6 +16,7 @@
 		8B240A1C1AB6C50F002C7B7B /* Header_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1B1AB6C50F002C7B7B /* Header_NSObject.tpl */; };
 		8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Header_MTLModel.tpl */; };
 		8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B240A201AB6DE5A002C7B7B /* libobjc.dylib */; };
+		8B329D911AB90BAD0020838D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B329D901AB90BAD0020838D /* AppKit.framework */; };
 		8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */; };
 		8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */; };
 		8B92B2E81AB81B6A00F50595 /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92B2E71AB81B6A00F50595 /* JSONSyntaxHighlight.m */; };
@@ -49,6 +50,7 @@
 		8B240A1D1AB6C520002C7B7B /* Header_MTLModel.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Header_MTLModel.tpl; sourceTree = "<group>"; };
 		8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8B240A201AB6DE5A002C7B7B /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
+		8B329D901AB90BAD0020838D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_NSObject.tpl; sourceTree = "<group>"; };
 		8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_MTLModel.tpl; sourceTree = "<group>"; };
 		8B92B2E61AB81B6A00F50595 /* JSONSyntaxHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSyntaxHighlight.h; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B329D911AB90BAD0020838D /* AppKit.framework in Frameworks */,
 				8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +82,7 @@
 		8B2409E81AB6B192002C7B7B = {
 			isa = PBXGroup;
 			children = (
+				8B329D901AB90BAD0020838D /* AppKit.framework */,
 				8B240A201AB6DE5A002C7B7B /* libobjc.dylib */,
 				8B2409F31AB6B192002C7B7B /* ModelBot */,
 				8B240A071AB6B192002C7B7B /* ModelBotTests */,
@@ -98,14 +102,15 @@
 		8B2409F31AB6B192002C7B7B /* ModelBot */ = {
 			isa = PBXGroup;
 			children = (
-				8B2409F61AB6B192002C7B7B /* AppDelegate.h */,
-				8B2409F71AB6B192002C7B7B /* AppDelegate.m */,
-				8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */,
 				8B92B2E91AB8228600F50595 /* UI */,
 				8B92B2DA1AB8054D00F50595 /* Library */,
 				8B240A1A1AB6C45F002C7B7B /* ModelTools */,
 				8B240A191AB6C42A002C7B7B /* JSONParse */,
 				8B240A181AB6C413002C7B7B /* Template */,
+				8B329D941AB916460020838D /* Framework */,
+				8B2409F61AB6B192002C7B7B /* AppDelegate.h */,
+				8B2409F71AB6B192002C7B7B /* AppDelegate.m */,
+				8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */,
 				8B2409FB1AB6B192002C7B7B /* Images.xcassets */,
 				8B2409FD1AB6B192002C7B7B /* MainMenu.xib */,
 				8B2409F41AB6B192002C7B7B /* Supporting Files */,
@@ -164,6 +169,13 @@
 			children = (
 			);
 			path = ModelTools;
+			sourceTree = "<group>";
+		};
+		8B329D941AB916460020838D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		8B92B2DA1AB8054D00F50595 /* Library */ = {
@@ -418,6 +430,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ModelBot/Framework",
+					"$(PROJECT_DIR)/ModelBot/Library",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
 				INFOPLIST_FILE = ModelBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -435,6 +452,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ModelBot/Framework",
+					"$(PROJECT_DIR)/ModelBot/Library",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
 				INFOPLIST_FILE = ModelBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

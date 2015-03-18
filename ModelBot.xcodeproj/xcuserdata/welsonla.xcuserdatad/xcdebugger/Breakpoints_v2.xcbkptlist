@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ModelBot/AppDelegate.m"
-            timestampString = "448276633.951476"
+            timestampString = "448333717.67884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-handleGenerate:"
             landmarkType = "5">
          </BreakpointContent>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ModelBot/AppDelegate.m"
-            timestampString = "448276633.951476"
+            filePath = "ModelBot/Library/JSONSyntaxHighlight/JSONSyntaxHighlight.m"
+            timestampString = "448357076.267388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "-handlePaste:"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-highlightJSONWithPrettyPrint:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ModelBot/AppDelegate.m"
-            timestampString = "448276633.951476"
+            filePath = "ModelBot/Library/JSONSyntaxHighlight/JSONSyntaxHighlight.m"
+            timestampString = "448357076.267388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "-pasteboard:provideDataForType:"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-highlightJSONWithPrettyPrint:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ModelBot/AppDelegate.m"
-            timestampString = "448276633.951476"
+            filePath = "ModelBot/Library/JSONSyntaxHighlight/JSONSyntaxHighlight.m"
+            timestampString = "448357076.267388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "-pasteboardChangedOwner:"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-highlightJSONWithPrettyPrint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModelBot/Library/JSONSyntaxHighlight/JSONSyntaxHighlight.m"
+            timestampString = "448357076.267388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-highlightJSONWithPrettyPrint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModelBot/Library/JSONSyntaxHighlight/JSONSyntaxHighlight.m"
+            timestampString = "448357076.267388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-highlightJSONWithPrettyPrint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModelBot/Library/JSONSyntaxHighlight/JSONSyntaxHighlight.m"
+            timestampString = "448357076.267388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-highlightJSONWithPrettyPrint:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ModelBot/UI/JSONTextview.m"
-            timestampString = "448278567.145975"
+            timestampString = "448359207.885862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "-handlePaste:"
             landmarkType = "5">
          </BreakpointContent>

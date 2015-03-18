@@ -64,12 +64,14 @@
         }
         
         // set the default attributes
-        self.nonStringAttributes = @{NSForegroundColorAttributeName: [self.class colorWithRGB:0x000080],
-                                     NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:16]};
-        self.stringAttributes = @{NSForegroundColorAttributeName: [self.class colorWithRGB:0x808000],
-                                  NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:16]};
-        self.keyAttributes = @{NSForegroundColorAttributeName: [self.class colorWithRGB:0xa52a2a],
-                               NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:16]};
+        self.nonStringAttributes = @{NSForegroundColorAttributeName: [self.class colorWithRGB:0xFF628C],
+                                                NSFontAttributeName:[NSFont fontWithName:@"Monaco" size:16]};
+        self.stringAttributes    = @{NSForegroundColorAttributeName: [self.class colorWithRGB:0xFF628C],
+                                                NSFontAttributeName:[NSFont fontWithName:@"Monaco" size:16]};
+        self.keyAttributes       = @{NSForegroundColorAttributeName: [self.class colorWithRGB:0x0088FF],
+                                                NSFontAttributeName:[NSFont fontWithName:@"Monaco" size:16]};
+        self.defaultAttributes   = @{NSForegroundColorAttributeName: [self.class colorWithRGB:0x8e44ad],
+                                                NSFontAttributeName:[NSFont fontWithName:@"Monaco" size:16]};
     }
     return self;
 }
@@ -90,7 +92,7 @@
          NSAttributedString *as = [[NSAttributedString alloc] initWithString:s attributes:self.defaultAttributes];
          if (prettyPrint) [line appendAttributedString:as];
      }
-                                 keyBlock:
+  keyBlock:
      // The key (with quotes and colon)
      ^(NSRange range, NSString *s) {
          // I hate this: this changes `"key" : ` to `"key"`
@@ -99,7 +101,7 @@
          NSString *colon = prettyPrint ? @" : " : @":";
          [line appendAttributedString:[[NSAttributedString alloc] initWithString:colon attributes:self.defaultAttributes]];
      }
-                               valueBlock:
+  valueBlock:
      // The value
      ^(NSRange range, NSString *s) {
          NSAttributedString *as;
@@ -110,13 +112,15 @@
          
          [line appendAttributedString:as];
      }
-                                 endBlock:
+  endBlock:
      // The final comma, or ending character
      ^(NSRange range, NSString *s) {
          NSAttributedString *as = [[NSAttributedString alloc] initWithString:s attributes:self.defaultAttributes];
          [line appendAttributedString:as];
          if (prettyPrint) [line appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
      }];
+    
+    NSLog(@"line:%@",line.string);
     
     if ([line isEqualToAttributedString:[[NSAttributedString alloc] initWithString:@""]])
         line = [[NSMutableAttributedString alloc] initWithString:self.parsedJSON];
