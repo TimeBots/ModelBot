@@ -18,7 +18,9 @@
                 <outlet property="generateButton" destination="hcE-Nc-qir" id="2n2-o1-FDU"/>
                 <outlet property="jsonTextView" destination="X0E-i5-InR" id="T0d-7k-42a"/>
                 <outlet property="jsonTextview" destination="X0E-i5-InR" id="rfE-pH-Bb0"/>
+                <outlet property="menuBar" destination="7wA-Tb-wHc" id="9h4-Ul-gjL"/>
                 <outlet property="modelMenu" destination="aV3-Sa-6dS" id="QDl-9z-VS0"/>
+                <outlet property="runBarItem" destination="sgA-yl-0Nl" id="UxR-zX-btX"/>
                 <outlet property="stateLabel" destination="rHr-Co-Fxt" id="gI8-9d-zaU"/>
                 <outlet property="typePopButton" destination="YPi-Hs-e5D" id="vfs-eZ-qJS"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -733,8 +735,8 @@
                             <rect key="frame" x="1" y="1" width="223" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" smartInsertDelete="YES" id="X0E-i5-InR" customClass="JSONTextview">
-                                    <rect key="frame" x="0.0" y="0.0" width="223" height="178"/>
+                                <textView importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" smartInsertDelete="YES" id="X0E-i5-InR" customClass="MPEditorView">
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="262"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="443" height="262"/>
@@ -781,8 +783,33 @@
                     <constraint firstItem="9Db-YO-eWL" firstAttribute="leading" secondItem="Fzc-wF-yAc" secondAttribute="leading" id="zz9-u1-WJE"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="686.5" y="542.5"/>
+            <toolbar key="toolbar" implicitIdentifier="022AB1B2-2A45-4A2B-8096-7B9F30B16909" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="7wA-Tb-wHc">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarCustomizeToolbarItem" explicitItemIdentifier="NSToolbarCustomizeToolbarItemId" id="sgA-yl-0Nl">
+                        <connections>
+                            <action selector="changeFont:" target="-1" id="SHl-h7-ATX"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="HAm-Wa-3b7"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="XsI-Vu-vIz"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="kT7-se-cLo"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="k3Y-Qu-Ph5"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="EjP-ER-E1w"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="HAm-Wa-3b7"/>
+                    <toolbarItem reference="XsI-Vu-vIz"/>
+                    <toolbarItem reference="EjP-ER-E1w"/>
+                    <toolbarItem reference="kT7-se-cLo"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="432" y="579"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="ISS-ns-Xlp"/>
+        <textFieldCell controlSize="small" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Text" id="UUf-Pl-vd7">
+            <font key="font" metaFont="smallSystem"/>
+            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+        </textFieldCell>
     </objects>
 </document>
