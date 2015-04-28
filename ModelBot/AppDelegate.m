@@ -41,6 +41,10 @@
     [self.menuBar insertItemWithItemIdentifier:@"NSToolbarCustomizeToolbarItemId" atIndex:0];
     NSToolbarItem *item = self.menuBar.items[0];
     item.image = [NSImage imageNamed:@"run"];
+    item.label = @"Code Run";
+    item.target = self;
+    item.action = @selector(handleGenerate:);
+
 }
 
 - (void)initService

@@ -14,7 +14,8 @@
 
 - (void)generateModelWithName:(NSString *)fileName andType:(ModelType)classType ofJSONContext:(NSDictionary *)jsonDict
 {
-    modelName = [fileName capitalizedString];
+    modelName = [fileName stringByReplacingCharactersInRange:NSMakeRange(0, 1)
+                                                  withString:[[fileName substringToIndex:1] uppercaseString]];
     modelType = classType;
     
     //生成header与source文件中的内容
