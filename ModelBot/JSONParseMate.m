@@ -37,31 +37,35 @@
     
     for (NSInteger i=0; i< modelKeys.count; i++)
     {
-        NSString *classProperty = modelKeys[i];
+        
         
         //---------------------------------
         //-----------Header Code-----------
         //---------------------------------
         //坑爹的判断，为什么都是NSCFString, NSCFNumber
-        if ([jsonValues[i] isKindOfClass:[NSNumber class]])
+        
+        NSString *dictValue = jsonValues[i];
+        NSString *dictKey = modelKeys[i];
+        
+        if ([dictValue isKindOfClass:[NSNumber class]])
         {
             //封装integer类型
-            properties = [properties stringByAppendingFormat:@"@property (nonatomic, assign) NSInteger %@;\n",classProperty];
+            properties = [properties stringByAppendingFormat:@"@property (nonatomic, assign) NSInteger %@;\n",dictKey];
         }
-        else if([jsonValues[i] isKindOfClass:[NSString class]])
+        else if([dictValue isKindOfClass:[NSArray class]])
+        {
+            //封装array类型
+            properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSArray *%@;\n",dictKey];
+        }
+        else if([dictValue isKindOfClass:[NSDictionary class]])
+        {
+            //封装array类型
+            properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSDictionary *%@;\n",dictKey];
+        }
+        else
         {
             //封装string类型
-            properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSString *%@;\n",classProperty];
-        }
-        else if([jsonValues[i] isKindOfClass:[NSArray class]])
-        {
-            //封装array类型
-            properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSArray *%@;\n",classProperty];
-        }
-        else if([jsonValues[i] isKindOfClass:[NSDictionary class]])
-        {
-            //封装array类型
-            properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSDictionary *%@;\n",classProperty];
+            properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSString *%@;\n",dictKey];
         }
         
         //---------------------------------
