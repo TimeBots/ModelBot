@@ -44,13 +44,30 @@
         //---------------------------------
         //坑爹的判断，为什么都是NSCFString, NSCFNumber
         
-        NSString *dictValue = jsonValues[i];
+        id dictValue = jsonValues[i];
         NSString *dictKey = modelKeys[i];
         
+        NSLog(@"typeof:%@--value:%@",NSStringFromClass([dictValue class]),dictValue);
+        
+        //Number
         if ([dictValue isKindOfClass:[NSNumber class]])
         {
-            //封装integer类型
-            properties = [properties stringByAppendingFormat:@"@property (nonatomic, assign) NSInteger %@;\n",dictKey];
+            
+            //假设都为float类型
+            CGFloat floatValue = [dictValue floatValue];
+            
+            //检测Float类型
+            //NSInteger == floatValue - floorf(floatValue)
+            if (floatValue - floorf(floatValue)!=0)
+            {
+               properties = [properties stringByAppendingFormat:@"@property (nonatomic, assign) CGFloat %@;\n",dictKey];
+            }
+            else
+            {
+               properties = [properties stringByAppendingFormat:@"@property (nonatomic, assign) NSInteger %@;\n",dictKey];
+            }
+            
+            
         }
         else if([dictValue isKindOfClass:[NSArray class]])
         {
@@ -74,10 +91,12 @@
         //组装source文件中的数据
         if (modelType == ModelType_NSObject)
         {
+            //normal source file
             synthesize = [synthesize stringByAppendingFormat:@"@synthesize %@;\n",modelKeys[i]];
         }
         else
         {
+            //mantle source file is a dictionary
             synthesize = [synthesize stringByAppendingFormat:@"@\"%@\":@\"%@\"",modelKeys[i],modelKeys[i]];
             if(i<(modelKeys.count-1))
             {
