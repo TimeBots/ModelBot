@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B222E0E1B4A739800517EBA /* appicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8B222E0D1B4A739800517EBA /* appicon.icns */; };
 		8B2409F81AB6B192002C7B7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2409F71AB6B192002C7B7B /* AppDelegate.m */; };
 		8B2409FA1AB6B192002C7B7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2409F91AB6B192002C7B7B /* main.m */; };
 		8B2409FC1AB6B192002C7B7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2409FB1AB6B192002C7B7B /* Images.xcassets */; };
@@ -17,6 +18,7 @@
 		8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Header_MTLModel.tpl */; };
 		8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B240A201AB6DE5A002C7B7B /* libobjc.dylib */; };
 		8B2939181ABBBA80008090DB /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B2939171ABBBA80008090DB /* run.png */; };
+		8B2D1BE01B4A72C30060EACC /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2D1BDF1B4A72C30060EACC /* Images-2.xcassets */; };
 		8B329D911AB90BAD0020838D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B329D901AB90BAD0020838D /* AppKit.framework */; };
 		8B33FBAD1ABAC4840071D565 /* MPEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B33FBAC1ABAC4840071D565 /* MPEditorView.m */; };
 		8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B222E0D1B4A739800517EBA /* appicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = appicon.icns; sourceTree = "<group>"; };
 		8B2409F11AB6B192002C7B7B /* ModelBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModelBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2409F51AB6B192002C7B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B2409F61AB6B192002C7B7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8B240A201AB6DE5A002C7B7B /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
 		8B2939171ABBBA80008090DB /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run.png; sourceTree = "<group>"; };
+		8B2D1BDF1B4A72C30060EACC /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		8B329D901AB90BAD0020838D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		8B33FBAB1ABAC4840071D565 /* MPEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEditorView.h; sourceTree = "<group>"; };
 		8B33FBAC1ABAC4840071D565 /* MPEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPEditorView.m; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		8B2409E81AB6B192002C7B7B = {
 			isa = PBXGroup;
 			children = (
+				8B222E0D1B4A739800517EBA /* appicon.icns */,
 				8B2409F31AB6B192002C7B7B /* ModelBot */,
 				8B240A071AB6B192002C7B7B /* ModelBotTests */,
 				8B2409F21AB6B192002C7B7B /* Products */,
@@ -117,6 +122,7 @@
 				8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */,
 				8B2409FB1AB6B192002C7B7B /* Images.xcassets */,
 				8B2409FD1AB6B192002C7B7B /* MainMenu.xib */,
+				8B2D1BDF1B4A72C30060EACC /* Images-2.xcassets */,
 				8B2409F41AB6B192002C7B7B /* Supporting Files */,
 			);
 			path = ModelBot;
@@ -300,8 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2D1BE01B4A72C30060EACC /* Images-2.xcassets in Resources */,
 				8B2409FC1AB6B192002C7B7B /* Images.xcassets in Resources */,
 				8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */,
+				8B222E0E1B4A739800517EBA /* appicon.icns in Resources */,
 				8B240A1C1AB6C50F002C7B7B /* Header_NSObject.tpl in Resources */,
 				8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */,
 				8B2409FF1AB6B192002C7B7B /* MainMenu.xib in Resources */,
