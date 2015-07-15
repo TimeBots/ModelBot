@@ -7,6 +7,7 @@
 //
 
 #import "JSONParseMate.h"
+#import "AnalyticsManager.h"
 
 @implementation JSONParseMate
 
@@ -36,7 +37,7 @@
     NSString *synthesize = @"";
     
     
-    BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:PropertyState];
+    BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:IS_ALL_AS_STRING];
     
     for (NSInteger i=0; i< modelKeys.count; i++)
     {
@@ -45,14 +46,13 @@
         //---------------------------------
         //-----------Header Code-----------
         //---------------------------------
-        //坑爹的判断，为什么都是NSCFString, NSCFNumber
         
         id dictValue = jsonValues[i];
         NSString *dictKey = modelKeys[i];
         
         //all as stirng
         //将不是数组和字典的数据转换为string
-        if (![dictValue isKindOfClass:NSArray.class]||![dictValue isKindOfClass:NSDictionary.class]) {
+        if (state && (![dictValue isKindOfClass:NSArray.class]||![dictValue isKindOfClass:NSDictionary.class])) {
             dictValue = nil;
         }
         
@@ -85,7 +85,7 @@
         }
         else if([dictValue isKindOfClass:[NSDictionary class]])
         {
-            //封装array类型
+            //封装dictionary类型
             properties = [properties stringByAppendingFormat:@"@property (nonatomic, strong) NSDictionary *%@;\n",dictKey];
         }
         else
@@ -185,6 +185,9 @@
     NSError *error;
     [[context dataUsingEncoding:NSUTF8StringEncoding] writeToFile:filePath atomically:YES];
     NSLog(@"WriteError:%@",error.description);
+    
+    //统计头文件行数
+    [AnalyticsManager calLines:context];
 }
 
 /**
@@ -217,6 +220,9 @@
     NSError *error;
     [[context dataUsingEncoding:NSUTF8StringEncoding] writeToFile:sourcePath atomically:YES];
     NSLog(@"WriteError:%@",error.description);
+    
+    //统计source文件行数
+    [AnalyticsManager calLines:context];
 }
 
 @end

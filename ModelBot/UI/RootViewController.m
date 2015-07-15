@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "AnalyticsManager.h"
 
 @interface RootViewController ()
 
@@ -34,7 +35,7 @@
     self.classTextField.focusRingType = NSFocusRingTypeNone;
     
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:PropertyState])
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:IS_ALL_AS_STRING])
     {
         self.checkButton.state = NSOnState;
     }
@@ -55,8 +56,6 @@
         [alert setInformativeText:@"Please input the class name in the field"];
         [alert addButtonWithTitle:@"OK"];
         [alert runModal];
-        
-//        [self.classTextField];
         
         return NO;
     }
@@ -116,13 +115,13 @@
 #pragma mark - JSONParseMate Delegate
 - (void)parseMateDidStartGenerateCode
 {
-//    self.stateLabel.stringValue = @"Start analytics....";
+    
 }
 
 - (void)parseMateDidFinishGenerateCode
 {
-//    self.stateLabel.stringValue = @"Generate success";
-//    self.stateLabel.textColor = [NSColor colorWithCalibratedRed:39/255.0f green:174/255.0f blue:96/255.0f alpha:1.0];
+    
+    [AnalyticsManager calFile];
     
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = @"";
@@ -191,11 +190,11 @@
 - (IBAction)handleCheck:(id)sender {
     if (self.checkButton.state == NSOnState)
     {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:PropertyState];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:IS_ALL_AS_STRING];
     }
     else
     {
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:PropertyState];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:IS_ALL_AS_STRING];
     }
     
     [[NSUserDefaults standardUserDefaults] synchronize];

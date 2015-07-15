@@ -13,13 +13,18 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 //模板名称
+//这样命名是为了更方便的提示出所有类型的模板
 #define HeaderMTLModel @"Header_MTLModel"
 #define HeaderNSObject @"Header_NSObject"
 
 #define SourceNSObject @"Source_NSObject"
 #define SourceMTLModel @"Source_MTLModel"
 
-#define PropertyState @"PropertyState"
+#define IS_ALL_AS_STRING @"IS_ALL_AS_STRING"
+
+#define TOTAL_CLASS_COUNT @"TOTAL_CLASS"
+#define TOTAL_FILE_COUNT  @"TOTAL_FILE"
+#define TOTAL_LINE_COUNT  @"TOTAL_LINE"
 
 //定义实体的类型
 typedef enum {

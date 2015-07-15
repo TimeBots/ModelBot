@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0209061B560B1800947EBC /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0209051B560B1800947EBC /* AnalyticsViewController.m */; };
+		8B0209071B560B1800947EBC /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0209051B560B1800947EBC /* AnalyticsViewController.m */; };
+		8B02090A1B56322500947EBC /* AnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0209091B56322500947EBC /* AnalyticsManager.m */; };
+		8B02090B1B56322500947EBC /* AnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0209091B56322500947EBC /* AnalyticsManager.m */; };
 		8B1C5F2B1B54FBA100B23290 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5F2A1B54FBA100B23290 /* RootViewController.m */; };
 		8B1C5F2C1B54FBA100B23290 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5F2A1B54FBA100B23290 /* RootViewController.m */; };
 		8B222E0E1B4A739800517EBA /* appicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8B222E0D1B4A739800517EBA /* appicon.icns */; };
 		8B2409F81AB6B192002C7B7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2409F71AB6B192002C7B7B /* AppDelegate.m */; };
 		8B2409FA1AB6B192002C7B7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2409F91AB6B192002C7B7B /* main.m */; };
 		8B2409FC1AB6B192002C7B7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2409FB1AB6B192002C7B7B /* Images.xcassets */; };
-		8B2409FF1AB6B192002C7B7B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2409FD1AB6B192002C7B7B /* MainMenu.xib */; };
 		8B240A0B1AB6B192002C7B7B /* ModelBotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B240A0A1AB6B192002C7B7B /* ModelBotTests.m */; };
 		8B240A1C1AB6C50F002C7B7B /* Header_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1B1AB6C50F002C7B7B /* Header_NSObject.tpl */; };
 		8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Header_MTLModel.tpl */; };
 		8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B240A201AB6DE5A002C7B7B /* libobjc.dylib */; };
-		8B2939181ABBBA80008090DB /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B2939171ABBBA80008090DB /* run.png */; };
-		8B2B07F31B550AF8006BBC83 /* fontawesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B2B07F21B550AF8006BBC83 /* fontawesome.ttf */; };
-		8B2B07F41B550AF8006BBC83 /* fontawesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B2B07F21B550AF8006BBC83 /* fontawesome.ttf */; };
 		8B329D911AB90BAD0020838D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B329D901AB90BAD0020838D /* AppKit.framework */; };
 		8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */; };
 		8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */; };
@@ -47,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B0209041B560B1800947EBC /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsViewController.h; sourceTree = "<group>"; };
+		8B0209051B560B1800947EBC /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsViewController.m; sourceTree = "<group>"; };
+		8B0209081B56322500947EBC /* AnalyticsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalyticsManager.h; path = ModelBot/Modeltools/AnalyticsManager.h; sourceTree = SOURCE_ROOT; };
+		8B0209091B56322500947EBC /* AnalyticsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsManager.m; path = ModelBot/Modeltools/AnalyticsManager.m; sourceTree = SOURCE_ROOT; };
 		8B1C5F291B54FBA100B23290 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		8B1C5F2A1B54FBA100B23290 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		8B222E0D1B4A739800517EBA /* appicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = appicon.icns; sourceTree = "<group>"; };
@@ -56,7 +60,6 @@
 		8B2409F71AB6B192002C7B7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8B2409F91AB6B192002C7B7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B2409FB1AB6B192002C7B7B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8B2409FE1AB6B192002C7B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8B240A041AB6B192002C7B7B /* ModelBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B240A091AB6B192002C7B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B240A0A1AB6B192002C7B7B /* ModelBotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelBotTests.m; sourceTree = "<group>"; };
@@ -64,8 +67,6 @@
 		8B240A1D1AB6C520002C7B7B /* Header_MTLModel.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Header_MTLModel.tpl; sourceTree = "<group>"; };
 		8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8B240A201AB6DE5A002C7B7B /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
-		8B2939171ABBBA80008090DB /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run.png; sourceTree = "<group>"; };
-		8B2B07F21B550AF8006BBC83 /* fontawesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontawesome.ttf; sourceTree = "<group>"; };
 		8B329D901AB90BAD0020838D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_NSObject.tpl; sourceTree = "<group>"; };
 		8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_MTLModel.tpl; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 				8B2409F71AB6B192002C7B7B /* AppDelegate.m */,
 				8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */,
 				8B2409FB1AB6B192002C7B7B /* Images.xcassets */,
-				8B2409FD1AB6B192002C7B7B /* MainMenu.xib */,
 				8B2409F41AB6B192002C7B7B /* Supporting Files */,
 			);
 			path = ModelBot;
@@ -190,6 +190,8 @@
 		8B240A1A1AB6C45F002C7B7B /* ModelTools */ = {
 			isa = PBXGroup;
 			children = (
+				8B0209081B56322500947EBC /* AnalyticsManager.h */,
+				8B0209091B56322500947EBC /* AnalyticsManager.m */,
 			);
 			path = ModelTools;
 			sourceTree = "<group>";
@@ -199,18 +201,8 @@
 			children = (
 				8BB3CAD81B550E18001E770B /* line_graph@2x.png */,
 				8BB3CAD51B550DFB001E770B /* line_graph.png */,
-				8B2B07F11B550AF8006BBC83 /* font */,
-				8B2939171ABBBA80008090DB /* run.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		8B2B07F11B550AF8006BBC83 /* font */ = {
-			isa = PBXGroup;
-			children = (
-				8B2B07F21B550AF8006BBC83 /* fontawesome.ttf */,
-			);
-			path = font;
 			sourceTree = "<group>";
 		};
 		8B329D941AB916460020838D /* Framework */ = {
@@ -249,6 +241,8 @@
 				8B1C5F2A1B54FBA100B23290 /* RootViewController.m */,
 				8BDA4B691B5519BE0051C745 /* RootWindowController.h */,
 				8BDA4B6A1B5519BE0051C745 /* RootWindowController.m */,
+				8B0209041B560B1800947EBC /* AnalyticsViewController.h */,
+				8B0209051B560B1800947EBC /* AnalyticsViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -340,11 +334,8 @@
 				8BB3CAD91B550E18001E770B /* line_graph@2x.png in Resources */,
 				8B240A1C1AB6C50F002C7B7B /* Header_NSObject.tpl in Resources */,
 				8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */,
-				8B2409FF1AB6B192002C7B7B /* MainMenu.xib in Resources */,
-				8B2939181ABBBA80008090DB /* run.png in Resources */,
 				8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */,
 				8BB3CAD61B550DFB001E770B /* line_graph.png in Resources */,
-				8B2B07F31B550AF8006BBC83 /* fontawesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +345,6 @@
 			files = (
 				8BB3CADD1B5514C5001E770B /* Main.storyboard in Resources */,
 				8BB3CAD71B550DFB001E770B /* line_graph.png in Resources */,
-				8B2B07F41B550AF8006BBC83 /* fontawesome.ttf in Resources */,
 				8BB3CADA1B550E18001E770B /* line_graph@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,9 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B02090A1B56322500947EBC /* AnalyticsManager.m in Sources */,
 				8BE19E3F1B54DAAB00ED50AB /* JSONParseMate.m in Sources */,
 				8BDA4B6B1B5519BE0051C745 /* RootWindowController.m in Sources */,
 				8B1C5F2B1B54FBA100B23290 /* RootViewController.m in Sources */,
+				8B0209061B560B1800947EBC /* AnalyticsViewController.m in Sources */,
 				8B2409FA1AB6B192002C7B7B /* main.m in Sources */,
 				8B92B2E81AB81B6A00F50595 /* JSONSyntaxHighlight.m in Sources */,
 				8B92B2ED1AB822D900F50595 /* JSONTextview.m in Sources */,
@@ -380,6 +372,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B02090B1B56322500947EBC /* AnalyticsManager.m in Sources */,
+				8B0209071B560B1800947EBC /* AnalyticsViewController.m in Sources */,
 				8B1C5F2C1B54FBA100B23290 /* RootViewController.m in Sources */,
 				8B240A0B1AB6B192002C7B7B /* ModelBotTests.m in Sources */,
 			);
@@ -394,17 +388,6 @@
 			targetProxy = 8B240A051AB6B192002C7B7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8B2409FD1AB6B192002C7B7B /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B2409FE1AB6B192002C7B7B /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8B240A0C1AB6B192002C7B7B /* Debug */ = {
