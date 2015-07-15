@@ -26,7 +26,6 @@
             return [NSApp sendAction:@selector(copy:) to:[[self window] firstResponder] from:self];
         } else if ([[event charactersIgnoringModifiers] isEqualToString:@"v"]) {
             
-//            return [super performKeyEquivalent:event];
             return [NSApp sendAction:@selector(handlePaste:) to:[[self window] firstResponder] from:self];
         } else if ([[event charactersIgnoringModifiers] isEqualToString:@"a"]) {
             return [NSApp sendAction:@selector(selectAll:) to:[[self window] firstResponder] from:self];

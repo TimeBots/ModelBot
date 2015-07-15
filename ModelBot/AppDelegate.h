@@ -8,15 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <
-NSApplicationDelegate>
-
-@property (weak) IBOutlet NSMenu      *modelMenu;
-@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
-
-
-@property (weak) IBOutlet NSTextFieldCell *stateLabel;
-
+@interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @end
 

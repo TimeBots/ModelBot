@@ -28,8 +28,6 @@
 		8B92B2ED1AB822D900F50595 /* JSONTextview.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92B2EC1AB822D900F50595 /* JSONTextview.m */; };
 		8BB3CAD61B550DFB001E770B /* line_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CAD51B550DFB001E770B /* line_graph.png */; };
 		8BB3CAD71B550DFB001E770B /* line_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CAD51B550DFB001E770B /* line_graph.png */; };
-		8BB3CAD91B550E18001E770B /* line_graph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CAD81B550E18001E770B /* line_graph@2x.png */; };
-		8BB3CADA1B550E18001E770B /* line_graph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CAD81B550E18001E770B /* line_graph@2x.png */; };
 		8BB3CADC1B5514C5001E770B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CADB1B5514C5001E770B /* Main.storyboard */; };
 		8BB3CADD1B5514C5001E770B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CADB1B5514C5001E770B /* Main.storyboard */; };
 		8BDA4B6B1B5519BE0051C745 /* RootWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA4B6A1B5519BE0051C745 /* RootWindowController.m */; };
@@ -75,7 +73,6 @@
 		8B92B2EB1AB822D900F50595 /* JSONTextview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONTextview.h; sourceTree = "<group>"; };
 		8B92B2EC1AB822D900F50595 /* JSONTextview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONTextview.m; sourceTree = "<group>"; };
 		8BB3CAD51B550DFB001E770B /* line_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_graph.png; sourceTree = "<group>"; };
-		8BB3CAD81B550E18001E770B /* line_graph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line_graph@2x.png"; sourceTree = "<group>"; };
 		8BB3CADB1B5514C5001E770B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8BDA4B691B5519BE0051C745 /* RootWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootWindowController.h; sourceTree = "<group>"; };
 		8BDA4B6A1B5519BE0051C745 /* RootWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootWindowController.m; sourceTree = "<group>"; };
@@ -199,7 +196,6 @@
 		8B2939161ABBBA6E008090DB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8BB3CAD81B550E18001E770B /* line_graph@2x.png */,
 				8BB3CAD51B550DFB001E770B /* line_graph.png */,
 			);
 			path = Resources;
@@ -331,7 +327,6 @@
 				8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */,
 				8B222E0E1B4A739800517EBA /* appicon.icns in Resources */,
 				8BB3CADC1B5514C5001E770B /* Main.storyboard in Resources */,
-				8BB3CAD91B550E18001E770B /* line_graph@2x.png in Resources */,
 				8B240A1C1AB6C50F002C7B7B /* Header_NSObject.tpl in Resources */,
 				8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */,
 				8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */,
@@ -345,7 +340,6 @@
 			files = (
 				8BB3CADD1B5514C5001E770B /* Main.storyboard in Resources */,
 				8BB3CAD71B550DFB001E770B /* line_graph.png in Resources */,
-				8BB3CADA1B550E18001E770B /* line_graph@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +467,7 @@
 		8B240A0F1AB6B192002C7B7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,6 +489,7 @@
 		8B240A101AB6B192002C7B7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

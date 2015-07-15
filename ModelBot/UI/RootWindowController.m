@@ -23,12 +23,6 @@
     [self.toolbar insertItemWithItemIdentifier:@"NSToolbarCustomizeToolbarItem" atIndex:0];
 }
 
-- (void)toolbarWillAddItem:(NSNotification *)notification
-{
-    NSLog(@"recive notification");
-}
-
-
 - (IBAction)showAnalytics:(id)sender {
     printf("ok");
 }

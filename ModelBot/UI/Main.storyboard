@@ -655,23 +655,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sMO-0b-8xR">
-                                <rect key="frame" x="35" y="163" width="62" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Classes:  " id="Y2g-VL-9LR">
+                                <rect key="frame" x="35" y="163" width="58" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Classes: " id="Y2g-VL-9LR">
                                     <font key="font" size="13" name="Helvetica"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DOL-j0-UYc">
-                                <rect key="frame" x="35" y="132" width="60" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TotalFile: " id="MUB-hK-qoM">
+                                <rect key="frame" x="26" y="132" width="67" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TotalFiles: " id="MUB-hK-qoM">
                                     <font key="font" size="13" name="Helvetica"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-iM-jpL">
-                                <rect key="frame" x="27" y="101" width="70" height="17"/>
+                                <rect key="frame" x="23" y="101" width="70" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TotalLines: " id="502-k2-P6u">
                                     <font key="font" size="13" name="Helvetica"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -695,7 +695,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pZl-AJ-iJq">
-                                <rect key="frame" x="96" y="132" width="12" height="17"/>
+                                <rect key="frame" x="92" y="132" width="12" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="pnE-JA-ibQ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -703,7 +703,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pyW-e9-0Yp">
-                                <rect key="frame" x="96" y="101" width="12" height="17"/>
+                                <rect key="frame" x="92" y="101" width="12" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="kLr-dg-zEe">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -711,7 +711,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QAC-Ub-C3C">
-                                <rect key="frame" x="96" y="163" width="12" height="17"/>
+                                <rect key="frame" x="92" y="163" width="12" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="0" id="31w-HV-OXA">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -744,7 +744,7 @@
                             <constraint firstItem="DOL-j0-UYc" firstAttribute="centerY" secondItem="pZl-AJ-iJq" secondAttribute="centerY" id="iPF-Um-Nk0"/>
                             <constraint firstAttribute="centerX" secondItem="Dg0-zd-UYh" secondAttribute="centerX" constant="3" id="iid-DO-rCl"/>
                             <constraint firstItem="sMO-0b-8xR" firstAttribute="top" secondItem="Dg0-zd-UYh" secondAttribute="bottom" constant="27" id="p80-lD-OD1"/>
-                            <constraint firstItem="DOL-j0-UYc" firstAttribute="trailing" secondItem="sMO-0b-8xR" secondAttribute="trailing" constant="-2" id="pps-XI-d8g"/>
+                            <constraint firstItem="DOL-j0-UYc" firstAttribute="trailing" secondItem="sMO-0b-8xR" secondAttribute="trailing" id="pps-XI-d8g"/>
                             <constraint firstAttribute="centerX" secondItem="xny-C7-mLb" secondAttribute="centerX" constant="2.5" id="r38-mb-z9f"/>
                             <constraint firstItem="cvP-iM-jpL" firstAttribute="top" secondItem="DOL-j0-UYc" secondAttribute="bottom" constant="14" id="saR-U6-kkS"/>
                             <constraint firstItem="sMO-0b-8xR" firstAttribute="leading" secondItem="3lT-dd-V7m" secondAttribute="leading" constant="37" id="syH-YJ-02b"/>
@@ -774,7 +774,7 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarCustomizeToolbarItem" explicitItemIdentifier="NSToolbarAnalyticsToolbarItem" id="0tc-ct-iBk" userLabel="Anlytics">
                                     <connections>
                                         <action selector="showAnalytics:" target="B8D-0N-5wS" id="i6F-qC-URa"/>
-                                        <segue destination="ioZ-9y-fXZ" kind="popover" popoverAnchorView="0tc-ct-iBk" popoverBehavior="t" preferredEdge="maxY" id="Uct-2R-Sro"/>
+                                        <segue destination="ioZ-9y-fXZ" kind="popover" popoverAnchorView="0tc-ct-iBk" popoverBehavior="semitransient" preferredEdge="maxY" id="Uct-2R-Sro"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="XJL-k9-gL2"/>
@@ -893,7 +893,7 @@
                                     <action selector="handleGenerate:" target="uau-oR-Zap" id="yHz-0e-eIg"/>
                                 </connections>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F32-rn-bBi">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="F32-rn-bBi">
                                 <rect key="frame" x="18" y="29" width="94" height="18"/>
                                 <buttonCell key="cell" type="check" title="All as string" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Fz9-aT-5ag">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -917,9 +917,11 @@
                             <constraint firstItem="uPu-ed-dHa" firstAttribute="top" secondItem="ECS-Oo-UUw" secondAttribute="bottom" constant="45" id="LEC-U1-1o9"/>
                             <constraint firstAttribute="trailing" secondItem="ECS-Oo-UUw" secondAttribute="trailing" constant="20" id="Pdf-yA-VAm"/>
                             <constraint firstItem="IBe-5f-PE0" firstAttribute="top" secondItem="s6d-1U-eFz" secondAttribute="top" constant="10" id="WkL-U3-jdE"/>
+                            <constraint firstItem="F32-rn-bBi" firstAttribute="leading" secondItem="IBe-5f-PE0" secondAttribute="leading" constant="10" id="ax4-sw-llX"/>
                             <constraint firstAttribute="trailing" secondItem="Rha-54-mmH" secondAttribute="trailing" constant="20" id="bNM-Jq-AQZ"/>
                             <constraint firstItem="Rha-54-mmH" firstAttribute="top" secondItem="s6d-1U-eFz" secondAttribute="top" constant="30" id="iLP-u5-r2X"/>
                             <constraint firstItem="3ru-Wg-sVf" firstAttribute="top" secondItem="ECS-Oo-UUw" secondAttribute="bottom" constant="10" id="lPp-fa-A45"/>
+                            <constraint firstItem="F32-rn-bBi" firstAttribute="centerY" secondItem="uPu-ed-dHa" secondAttribute="centerY" constant="2.5" id="mEl-dP-MVL"/>
                             <constraint firstItem="Mgs-Mg-zbC" firstAttribute="centerY" secondItem="uPu-ed-dHa" secondAttribute="centerY" id="mIh-TP-290"/>
                             <constraint firstItem="ECS-Oo-UUw" firstAttribute="bottom" secondItem="IBe-5f-PE0" secondAttribute="bottom" constant="-20" id="wcu-Se-gEK"/>
                             <constraint firstAttribute="trailing" secondItem="uPu-ed-dHa" secondAttribute="trailing" constant="20" id="xFY-cW-lbd"/>

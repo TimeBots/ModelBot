@@ -20,8 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupView];
+    
     [self setupService];
+}
+
+- (void)awakeFromNib
+{
+    [self setupView];
 }
 
 - (void)setupView
@@ -120,7 +125,6 @@
 
 - (void)parseMateDidFinishGenerateCode
 {
-    
     [AnalyticsManager calFile];
     
     NSAlert *alert = [[NSAlert alloc] init];
@@ -145,14 +149,18 @@
     [alert runModal];
 }
 
+
+
 - (void)handleShowInFinder
 {
-    
+    //获取文件的路径~/Desk/Model/
     NSString *deskPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
     NSString *modelDirect = [deskPath stringByAppendingPathComponent:@"Model"];
     
+    //类名
     NSString *className = self.classTextField.stringValue;
     
+    //选中头文件与source文件
     NSURL *headerURL = [NSURL fileURLWithPath:[modelDirect stringByAppendingFormat:@"/%@.h",className]];
     NSURL *sourceURL = [NSURL fileURLWithPath:[modelDirect stringByAppendingFormat:@"/%@.m",className]];
     [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[headerURL,sourceURL]];
@@ -162,9 +170,7 @@
 - (IBAction)handleGenerate:(id)sender {
     
     if ([self checkInput])
-    {
-//        self.stateLabel.textColor = [NSColor blackColor];
-        
+    {        
         NSLog(@"self.jsonText:%@",self.jsonTextView.string);
         
         NSString *fileName = self.classTextField.stringValue;
