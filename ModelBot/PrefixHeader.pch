@@ -19,6 +19,8 @@
 #define SourceNSObject @"Source_NSObject"
 #define SourceMTLModel @"Source_MTLModel"
 
+#define PropertyState @"PropertyState"
+
 //定义实体的类型
 typedef enum {
     ModelType_NSObject,

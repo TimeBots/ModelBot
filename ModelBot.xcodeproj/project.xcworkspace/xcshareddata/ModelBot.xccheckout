@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8B0968AB-5726-45B3-9187-8F4B8566AD11</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ModelBot</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2909FE54B45CFA158C830A97E1FFD15065A81CD2</key>
 		<string>git.coding.net:welsonla/ModelBot.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ModelBot.xcodeproj/project.xcworkspace</string>
+	<string>ModelBot.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2909FE54B45CFA158C830A97E1FFD15065A81CD2</key>

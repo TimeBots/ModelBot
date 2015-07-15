@@ -35,6 +35,9 @@
     NSString *properties = @"";
     NSString *synthesize = @"";
     
+    
+    BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:PropertyState];
+    
     for (NSInteger i=0; i< modelKeys.count; i++)
     {
         
@@ -46,6 +49,12 @@
         
         id dictValue = jsonValues[i];
         NSString *dictKey = modelKeys[i];
+        
+        //all as stirng
+        //将不是数组和字典的数据转换为string
+        if (![dictValue isKindOfClass:NSArray.class]||![dictValue isKindOfClass:NSDictionary.class]) {
+            dictValue = nil;
+        }
         
         NSLog(@"typeof:%@--value:%@",NSStringFromClass([dictValue class]),dictValue);
         

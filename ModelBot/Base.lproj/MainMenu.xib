@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8121.20"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -753,18 +753,25 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="D7v-lJ-1sT">
-                            <rect key="frame" x="224" y="1" width="15" height="133"/>
+                            <rect key="frame" x="444" y="1" width="15" height="262"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Db-YO-eWL">
                         <rect key="frame" x="18" y="71" width="464" height="15"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Ready?" id="rHr-Co-Fxt">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="rHr-Co-Fxt">
                             <font key="font" size="12" name="Helvetica-Light"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         </textFieldCell>
                     </textField>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="43j-ou-yyq">
+                        <rect key="frame" x="19" y="32" width="96" height="18"/>
+                        <buttonCell key="cell" type="check" title="All as String" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0uU-r9-qLy">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Fzc-wF-yAc" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="2dl-Bf-oZW"/>
@@ -772,6 +779,8 @@
                     <constraint firstItem="YPi-Hs-e5D" firstAttribute="centerY" secondItem="hcE-Nc-qir" secondAttribute="centerY" id="8cV-xZ-aIj"/>
                     <constraint firstAttribute="trailing" secondItem="Fzc-wF-yAc" secondAttribute="trailing" constant="20" id="JqK-A1-Ni4"/>
                     <constraint firstItem="hcE-Nc-qir" firstAttribute="top" secondItem="Fzc-wF-yAc" secondAttribute="bottom" constant="45" id="LcJ-yl-xfy"/>
+                    <constraint firstItem="43j-ou-yyq" firstAttribute="leading" secondItem="X0E-i5-InR" secondAttribute="leading" id="OmA-VP-Rqm"/>
+                    <constraint firstItem="43j-ou-yyq" firstAttribute="centerY" secondItem="hcE-Nc-qir" secondAttribute="centerY" id="SsQ-bV-OoD"/>
                     <constraint firstItem="hcE-Nc-qir" firstAttribute="leading" secondItem="YPi-Hs-e5D" secondAttribute="trailing" constant="31" id="Th4-6F-1CM"/>
                     <constraint firstItem="THs-gp-ry3" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="30" id="VNF-Gl-Xgp"/>
                     <constraint firstItem="9Db-YO-eWL" firstAttribute="top" secondItem="Fzc-wF-yAc" secondAttribute="bottom" constant="10" id="WVW-x4-Bmi"/>
@@ -783,13 +792,13 @@
                     <constraint firstItem="9Db-YO-eWL" firstAttribute="leading" secondItem="Fzc-wF-yAc" secondAttribute="leading" id="zz9-u1-WJE"/>
                 </constraints>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="022AB1B2-2A45-4A2B-8096-7B9F30B16909" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="7wA-Tb-wHc">
+            <toolbar key="toolbar" implicitIdentifier="B0BCABCC-66F0-4B5B-86A6-F3F57ABC973A" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="7wA-Tb-wHc">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="NSToolbarCustomizeToolbarItem" explicitItemIdentifier="NSToolbarCustomizeToolbarItemId" id="sgA-yl-0Nl"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems/>
             </toolbar>
-            <point key="canvasLocation" x="432" y="579"/>
+            <point key="canvasLocation" x="709" y="618"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="ISS-ns-Xlp"/>
         <textFieldCell controlSize="small" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Text" id="UUf-Pl-vd7">
