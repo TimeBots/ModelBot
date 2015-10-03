@@ -14,6 +14,9 @@
 
 @property (weak) IBOutlet NSToolbarItem *analyticsItem;
 
+@property (weak) IBOutlet NSToolbarItem *configItem;
+
+
 - (IBAction)showAnalytics:(id)sender;
 
 @end
