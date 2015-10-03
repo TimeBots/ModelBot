@@ -1,6 +1,14 @@
-#import "%@.h"
+//
+//  {$filename}.m
+//  Generate by ModelBot
+//
+//  Created by {$author} on {$date}.
+//  Copyright (c) {$year}年 {$copyright}. All rights reserved.
+//
 
-@implementation %@
+#import "{$filename}.h"
+
+@implementation {$filename}
 
 %@
 

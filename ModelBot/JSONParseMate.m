@@ -178,8 +178,11 @@
     NSString *templateText = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     
     //拼装模板
-    NSString *context = [NSString stringWithFormat:templateText,modelName,properties];
+    NSString *context = [NSString stringWithFormat:templateText,properties];
    
+    //替换源码中的标签符号
+    context = [self templeteTagReplace:context];
+    
     NSString *filePath = [self getFilePathIsHeader:YES];
     
     NSError *error;
@@ -189,6 +192,8 @@
     //统计头文件行数
     [AnalyticsManager calLines:context];
 }
+
+
 
 /**
  *  write to source code
@@ -212,8 +217,11 @@
     NSString *templateText = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     
     //拼装模板
-    NSString *context = [NSString stringWithFormat:templateText,modelName,modelName,source];
+    NSString *context = [NSString stringWithFormat:templateText,source];
 
+    //替换源码中的标签符号
+    context = [self templeteTagReplace:context];
+    
     
     NSString *sourcePath = [self getFilePathIsHeader:NO];
     
@@ -223,6 +231,30 @@
     
     //统计source文件行数
     [AnalyticsManager calLines:context];
+}
+
+
+
+
+
+- (NSString *)templeteTagReplace:(NSString *)content{
+    //文件名
+    content = [content stringByReplacingOccurrencesOfString:@"{$filename}" withString:modelName];
+    
+    //时间
+    content = [content stringByReplacingOccurrencesOfString:@"{$date}" withString:[ModelFunctionsMate getDate]];
+    
+    //年
+    content = [content stringByReplacingOccurrencesOfString:@"{$year}" withString:[ModelFunctionsMate getYear]];
+    
+    
+    MPreference *preference = [ModelFunctionsMate getPreference];
+    
+    content = [content stringByReplacingOccurrencesOfString:@"{$author}" withString:preference.Author];
+    
+    content = [content stringByReplacingOccurrencesOfString:@"{$copyright}" withString:preference.Copyright];
+    
+    return content;
 }
 
 @end
