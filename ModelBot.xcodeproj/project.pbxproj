@@ -22,13 +22,13 @@
 		8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Header_MTLModel.tpl */; };
 		8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B240A201AB6DE5A002C7B7B /* libobjc.dylib */; };
 		8B329D911AB90BAD0020838D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B329D901AB90BAD0020838D /* AppKit.framework */; };
-		8B6618781BBCE68C007A1E44 /* ModelFunctionsMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6618771BBCE68C007A1E44 /* ModelFunctionsMate.m */; settings = {ASSET_TAGS = (); }; };
+		8B6618781BBCE68C007A1E44 /* ModelFunctionsMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6618771BBCE68C007A1E44 /* ModelFunctionsMate.m */; };
 		8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */; };
 		8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */; };
 		8B92B2E81AB81B6A00F50595 /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92B2E71AB81B6A00F50595 /* JSONSyntaxHighlight.m */; };
 		8B92B2ED1AB822D900F50595 /* JSONTextview.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92B2EC1AB822D900F50595 /* JSONTextview.m */; };
-		8BA9D4ED1BBFDE03000135F8 /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9D4EC1BBFDE03000135F8 /* PreferenceController.m */; settings = {ASSET_TAGS = (); }; };
-		8BA9D4F11BC01956000135F8 /* MPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9D4F01BC01956000135F8 /* MPreference.m */; settings = {ASSET_TAGS = (); }; };
+		8BA9D4ED1BBFDE03000135F8 /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9D4EC1BBFDE03000135F8 /* PreferenceController.m */; };
+		8BA9D4F11BC01956000135F8 /* MPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA9D4F01BC01956000135F8 /* MPreference.m */; };
 		8BB3CAD61B550DFB001E770B /* line_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CAD51B550DFB001E770B /* line_graph.png */; };
 		8BB3CAD71B550DFB001E770B /* line_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CAD51B550DFB001E770B /* line_graph.png */; };
 		8BB3CADC1B5514C5001E770B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CADB1B5514C5001E770B /* Main.storyboard */; };
