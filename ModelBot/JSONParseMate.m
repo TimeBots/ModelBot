@@ -50,6 +50,10 @@
         id dictValue = jsonValues[i];
         NSString *dictKey = modelKeys[i];
         
+        if ([dictKey isEqualToString:@"id"]) {
+            dictKey = [dictKey capitalizedString];
+        }
+        
         //all as stirng
         //将不是数组和字典的数据转换为string
         if (state && (![dictValue isKindOfClass:NSArray.class]||![dictValue isKindOfClass:NSDictionary.class])) {
@@ -101,12 +105,12 @@
         if (modelType == ModelType_NSObject)
         {
             //normal source file
-            synthesize = [synthesize stringByAppendingFormat:@"@synthesize %@;\n",modelKeys[i]];
+            synthesize = [synthesize stringByAppendingFormat:@"@synthesize %@;\n",dictKey];
         }
         else
         {
             //mantle source file is a dictionary
-            synthesize = [synthesize stringByAppendingFormat:@"@\"%@\":@\"%@\"",modelKeys[i],modelKeys[i]];
+            synthesize = [synthesize stringByAppendingFormat:@"@\"%@\":@\"%@\"",dictKey,modelKeys[i]];
             if(i<(modelKeys.count-1))
             {
                synthesize = [synthesize stringByAppendingString:@",\n\t\t"];
