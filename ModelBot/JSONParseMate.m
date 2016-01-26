@@ -71,7 +71,7 @@
             //检测Float类型
             if ([ModelFunctionsMate checkDouble:doubleValue])
             {
-                [properties appendFormat:@"\tvar %@:Float?\n",dictKey];
+                [properties appendFormat:@"\tvar %@:Double?\n",dictKey];
             }
             else
             {

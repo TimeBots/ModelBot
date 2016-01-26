@@ -144,7 +144,7 @@
 				8B240A1A1AB6C45F002C7B7B /* Tools */,
 				8B240A191AB6C42A002C7B7B /* JSONParse */,
 				8B240A181AB6C413002C7B7B /* Template */,
-				8B329D941AB916460020838D /* Framework */,
+				8B49E0DF1C5766460063A6F9 /* Framework */,
 				8B2409FB1AB6B192002C7B7B /* Images.xcassets */,
 				8B2939161ABBBA6E008090DB /* Resources */,
 				8B2409F41AB6B192002C7B7B /* Supporting Files */,
@@ -220,7 +220,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		8B329D941AB916460020838D /* Framework */ = {
+		8B49E0D21C5760D10063A6F9 /* DevMateKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DevMateKit;
+			sourceTree = "<group>";
+		};
+		8B49E0DF1C5766460063A6F9 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
 				8B329D901AB90BAD0020838D /* AppKit.framework */,
@@ -232,6 +239,7 @@
 		8B92B2DA1AB8054D00F50595 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				8B49E0D21C5760D10063A6F9 /* DevMateKit */,
 				8B92B2E51AB81B6A00F50595 /* JSONSyntaxHighlight */,
 			);
 			path = Library;
@@ -317,7 +325,7 @@
 		8B2409E91AB6B192002C7B7B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Timebot;
 				TargetAttributes = {
 					8B2409F01AB6B192002C7B7B = {
@@ -439,6 +447,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -506,17 +515,16 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/ModelBot/Framework",
 					"$(PROJECT_DIR)/ModelBot/Library",
+					"$(PROJECT_DIR)/ModelBot/Framework/DevMateKit/DevMateKit.framework/Frameworks",
+					"$(PROJECT_DIR)/ModelBot/Framework/DevMateKit",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
 				INFOPLIST_FILE = ModelBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timebot.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -528,17 +536,16 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/ModelBot/Framework",
 					"$(PROJECT_DIR)/ModelBot/Library",
+					"$(PROJECT_DIR)/ModelBot/Framework/DevMateKit/DevMateKit.framework/Frameworks",
+					"$(PROJECT_DIR)/ModelBot/Framework/DevMateKit",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
 				INFOPLIST_FILE = ModelBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timebot.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -558,6 +565,7 @@
 				);
 				INFOPLIST_FILE = ModelBotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timebot.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModelBot.app/Contents/MacOS/ModelBot";
 			};
@@ -574,6 +582,7 @@
 				);
 				INFOPLIST_FILE = ModelBotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timebot.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModelBot.app/Contents/MacOS/ModelBot";
 			};

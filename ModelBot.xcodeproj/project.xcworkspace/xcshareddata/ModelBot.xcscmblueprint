@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "49602A343B67162C0E3B140C8D2FDEAA0C73B74F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "49602A343B67162C0E3B140C8D2FDEAA0C73B74F" : 0,
+    "E1E42956C5A0FFCD8DE12C248FA1B9E71B99895E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8B0968AB-5726-45B3-9187-8F4B8566AD11",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "49602A343B67162C0E3B140C8D2FDEAA0C73B74F" : "ModelBot\/",
+    "E1E42956C5A0FFCD8DE12C248FA1B9E71B99895E" : "DevMateKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ModelBot",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ModelBot.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:TimeBots\/ModelBot.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "49602A343B67162C0E3B140C8D2FDEAA0C73B74F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:DevMate\/DevMateKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E1E42956C5A0FFCD8DE12C248FA1B9E71B99895E"
+    }
+  ]
+}
