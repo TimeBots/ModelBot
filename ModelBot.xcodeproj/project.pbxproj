@@ -35,6 +35,7 @@
 		8BB3CADD1B5514C5001E770B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CADB1B5514C5001E770B /* Main.storyboard */; };
 		8BDA4B6B1B5519BE0051C745 /* RootWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA4B6A1B5519BE0051C745 /* RootWindowController.m */; };
 		8BE19E3F1B54DAAB00ED50AB /* JSONParseMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE19E3E1B54DAAB00ED50AB /* JSONParseMate.m */; };
+		8BFE80D81C5715C9005C842B /* ObjectMapper_Swift.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE80D71C5715C9005C842B /* ObjectMapper_Swift.tpl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		8BDA4B6A1B5519BE0051C745 /* RootWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootWindowController.m; sourceTree = "<group>"; };
 		8BE19E3D1B54DAAB00ED50AB /* JSONParseMate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONParseMate.h; path = ModelBot/JSONParseMate.h; sourceTree = SOURCE_ROOT; };
 		8BE19E3E1B54DAAB00ED50AB /* JSONParseMate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONParseMate.m; path = ModelBot/JSONParseMate.m; sourceTree = SOURCE_ROOT; };
+		8BFE80D71C5715C9005C842B /* ObjectMapper_Swift.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectMapper_Swift.tpl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				8B240A1D1AB6C520002C7B7B /* Header_MTLModel.tpl */,
 				8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */,
 				8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */,
+				8BFE80D71C5715C9005C842B /* ObjectMapper_Swift.tpl */,
 			);
 			path = Template;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */,
 				8B222E0E1B4A739800517EBA /* appicon.icns in Resources */,
 				8BB3CADC1B5514C5001E770B /* Main.storyboard in Resources */,
+				8BFE80D81C5715C9005C842B /* ObjectMapper_Swift.tpl in Resources */,
 				8B240A1C1AB6C50F002C7B7B /* Header_NSObject.tpl in Resources */,
 				8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */,
 				8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */,
