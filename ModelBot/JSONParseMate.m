@@ -73,7 +73,7 @@
             //NSInteger == floatValue - floorf(floatValue)
             if (floatValue - floorf(floatValue)!=0)
             {
-               properties = [properties stringByAppendingFormat:@"@property (nonatomic, assign) CGFloat %@;\n",dictKey];
+               properties = [properties stringByAppendingFormat:@"@property (nonatomic, assign) double %@;\n",dictKey];
             }
             else
             {
