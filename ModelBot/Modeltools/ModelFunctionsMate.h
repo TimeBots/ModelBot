@@ -22,4 +22,6 @@
 
 + (MPreference *)getPreference;
 
++ (BOOL)checkDouble:(double)doubleValue;
+
 @end

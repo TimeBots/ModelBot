@@ -40,4 +40,9 @@
     return preference;
 }
 
++ (BOOL)checkDouble:(double)doubleValue{
+    //NSInteger == floatValue - floorf(floatValue)
+    return (doubleValue - floorf(doubleValue))!=0;
+}
+
 @end

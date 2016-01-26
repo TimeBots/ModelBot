@@ -108,13 +108,8 @@
 - (ModelType)checkModelType
 {
     NSLog(@"self.typePopButton.value:%ld",(long)self.typePopButton.selectedTag);
-    
-    if (self.typePopButton.selectedTag==101)
-    {
-        return ModelType_MTLModel;
-    }
-    
-    return ModelType_NSObject;
+    NSInteger menuTag = self.typePopButton.selectedTag;
+    return menuTag-100;
 }
 
 #pragma mark - JSONParseMate Delegate

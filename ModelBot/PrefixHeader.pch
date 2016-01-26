@@ -21,6 +21,9 @@
 #define SourceNSObject @"Source_NSObject"
 #define SourceMTLModel @"Source_MTLModel"
 
+#define SwiftObjectMapper @"ObjectMapper_Swift"
+#define SwiftModel @"Swift"
+
 #define IS_ALL_AS_STRING @"IS_ALL_AS_STRING"
 
 #define TOTAL_CLASS_COUNT @"TOTAL_CLASS"
@@ -28,11 +31,11 @@
 #define TOTAL_LINE_COUNT  @"TOTAL_LINE"
 
 //定义实体的类型
-typedef enum {
+typedef NS_ENUM(NSUInteger, ModelType) {
     ModelType_NSObject,
-    ModelType_MTLModel
-}ModelType;
-
-
+    ModelType_MTLModel,
+    ModelType_Swift,
+    ModelType_ObjectMapper
+};
 
 #endif

@@ -22,6 +22,7 @@
 		8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B240A1D1AB6C520002C7B7B /* Header_MTLModel.tpl */; };
 		8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B240A201AB6DE5A002C7B7B /* libobjc.dylib */; };
 		8B329D911AB90BAD0020838D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B329D901AB90BAD0020838D /* AppKit.framework */; };
+		8B49E0B51C5757480063A6F9 /* Swift.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B49E0B41C5757480063A6F9 /* Swift.tpl */; };
 		8B6618781BBCE68C007A1E44 /* ModelFunctionsMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6618771BBCE68C007A1E44 /* ModelFunctionsMate.m */; };
 		8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */; };
 		8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */; };
@@ -70,6 +71,7 @@
 		8B240A1F1AB6C8D4002C7B7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8B240A201AB6DE5A002C7B7B /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
 		8B329D901AB90BAD0020838D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8B49E0B41C5757480063A6F9 /* Swift.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Swift.tpl; sourceTree = "<group>"; };
 		8B6618761BBCE68C007A1E44 /* ModelFunctionsMate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelFunctionsMate.h; path = ModelBot/Modeltools/ModelFunctionsMate.h; sourceTree = SOURCE_ROOT; };
 		8B6618771BBCE68C007A1E44 /* ModelFunctionsMate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelFunctionsMate.m; path = ModelBot/Modeltools/ModelFunctionsMate.m; sourceTree = SOURCE_ROOT; };
 		8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_NSObject.tpl; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */,
 				8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */,
 				8BFE80D71C5715C9005C842B /* ObjectMapper_Swift.tpl */,
+				8B49E0B41C5757480063A6F9 /* Swift.tpl */,
 			);
 			path = Template;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */,
 				8B222E0E1B4A739800517EBA /* appicon.icns in Resources */,
 				8BB3CADC1B5514C5001E770B /* Main.storyboard in Resources */,
+				8B49E0B51C5757480063A6F9 /* Swift.tpl in Resources */,
 				8BFE80D81C5715C9005C842B /* ObjectMapper_Swift.tpl in Resources */,
 				8B240A1C1AB6C50F002C7B7B /* Header_NSObject.tpl in Resources */,
 				8B240A1E1AB6C520002C7B7B /* Header_MTLModel.tpl in Resources */,
