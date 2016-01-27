@@ -11,6 +11,8 @@
 		8B0209071B560B1800947EBC /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0209051B560B1800947EBC /* AnalyticsViewController.m */; };
 		8B02090A1B56322500947EBC /* AnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0209091B56322500947EBC /* AnalyticsManager.m */; };
 		8B02090B1B56322500947EBC /* AnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0209091B56322500947EBC /* AnalyticsManager.m */; };
+		8B0637301C58D20800A3606E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B06372E1C58D20800A3606E /* Fabric.framework */; };
+		8B0637311C58D20800A3606E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B06372F1C58D20800A3606E /* Crashlytics.framework */; };
 		8B1C5F2B1B54FBA100B23290 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5F2A1B54FBA100B23290 /* RootViewController.m */; };
 		8B1C5F2C1B54FBA100B23290 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5F2A1B54FBA100B23290 /* RootViewController.m */; };
 		8B222E0E1B4A739800517EBA /* appicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8B222E0D1B4A739800517EBA /* appicon.icns */; };
@@ -54,6 +56,8 @@
 		8B0209051B560B1800947EBC /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsViewController.m; sourceTree = "<group>"; };
 		8B0209081B56322500947EBC /* AnalyticsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalyticsManager.h; path = ModelBot/Modeltools/AnalyticsManager.h; sourceTree = SOURCE_ROOT; };
 		8B0209091B56322500947EBC /* AnalyticsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsManager.m; path = ModelBot/Modeltools/AnalyticsManager.m; sourceTree = SOURCE_ROOT; };
+		8B06372E1C58D20800A3606E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		8B06372F1C58D20800A3606E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		8B1C5F291B54FBA100B23290 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		8B1C5F2A1B54FBA100B23290 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		8B222E0D1B4A739800517EBA /* appicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = appicon.icns; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			files = (
 				8B329D911AB90BAD0020838D /* AppKit.framework in Frameworks */,
 				8B240A211AB6DE5A002C7B7B /* libobjc.dylib in Frameworks */,
+				8B0637311C58D20800A3606E /* Crashlytics.framework in Frameworks */,
+				8B0637301C58D20800A3606E /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,16 +226,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		8B49E0D21C5760D10063A6F9 /* DevMateKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DevMateKit;
-			sourceTree = "<group>";
-		};
 		8B49E0DF1C5766460063A6F9 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				8B06372E1C58D20800A3606E /* Fabric.framework */,
+				8B06372F1C58D20800A3606E /* Crashlytics.framework */,
 				8B329D901AB90BAD0020838D /* AppKit.framework */,
 				8B240A201AB6DE5A002C7B7B /* libobjc.dylib */,
 			);
@@ -239,7 +240,6 @@
 		8B92B2DA1AB8054D00F50595 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				8B49E0D21C5760D10063A6F9 /* DevMateKit */,
 				8B92B2E51AB81B6A00F50595 /* JSONSyntaxHighlight */,
 			);
 			path = Library;
@@ -291,6 +291,7 @@
 				8B2409ED1AB6B192002C7B7B /* Sources */,
 				8B2409EE1AB6B192002C7B7B /* Frameworks */,
 				8B2409EF1AB6B192002C7B7B /* Resources */,
+				8B06372D1C58D1EF00A3606E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -384,6 +385,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B06372D1C58D1EF00A3606E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0acdc77ca48a9607154b5c16749c282ed1ad997f b1a43ffb46f396f62b14c6fc533dc8305c7fa362646eb18f895382cfea4e8710";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B2409ED1AB6B192002C7B7B /* Sources */ = {
@@ -518,6 +535,7 @@
 					"$(PROJECT_DIR)/ModelBot/Library",
 					"$(PROJECT_DIR)/ModelBot/Framework/DevMateKit/DevMateKit.framework/Frameworks",
 					"$(PROJECT_DIR)/ModelBot/Framework/DevMateKit",
+					"$(PROJECT_DIR)/ModelBot/Framework",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
 				INFOPLIST_FILE = ModelBot/Info.plist;
@@ -539,6 +557,7 @@
 					"$(PROJECT_DIR)/ModelBot/Library",
 					"$(PROJECT_DIR)/ModelBot/Framework/DevMateKit/DevMateKit.framework/Frameworks",
 					"$(PROJECT_DIR)/ModelBot/Framework/DevMateKit",
+					"$(PROJECT_DIR)/ModelBot/Framework",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ModelBot/PrefixHeader.pch";
 				INFOPLIST_FILE = ModelBot/Info.plist;

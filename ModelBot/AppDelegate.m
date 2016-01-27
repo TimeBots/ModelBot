@@ -16,7 +16,8 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
+    [Fabric with:@[[Crashlytics class]]];
+
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
