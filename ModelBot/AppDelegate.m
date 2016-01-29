@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-//#import <DevMateKit/DevMateKit.h>
+#import <AppKit/AppKit.h>
+#import "RootWindowController.h"
+
+#define kAlwaysOnTop @"AlwaysOnTop"
 
 @interface AppDelegate ()
 
@@ -17,11 +20,58 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [Fabric with:@[[Crashlytics class]]];
-
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kAlwaysOnTop]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAlwaysOnTop];
+    }
     
 }
 
+- (void)applicationWillTerminate:(NSNotification *)aNotification {
+
+}
+
+- (void)applicationWillResignActive:(NSNotification *)notification{
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:kAlwaysOnTop]){
+        //make the window always on top
+        NSWindow *window = [NSApp mainWindow];
+        [window setLevel:NSFloatingWindowLevel];
+    }
+}
+
+- (void)applicationWillHide:(NSNotification *)notification{
+}
+
+- (void)applicationWillBecomeActive:(NSNotification *)notification{
+
+}
+
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{
+    if(!flag)
+    {
+        //reopen the close window
+        id window;
+        for(window in sender.windows)
+        {
+            NSWindow *w = window;
+            [w makeKeyAndOrderFront:self];
+        }
+    }
+    return YES;
+}
+
+- (IBAction)handleWindowState:(id)sender {
+    NSMenuItem *alwaysOnTopItem = sender;
+    NSInteger state = alwaysOnTopItem.state;
+    if (state == 1) {
+        alwaysOnTopItem.state = 0;
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kAlwaysOnTop];
+    }else{
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAlwaysOnTop];
+    }
+
+    
+    NSLog(@"alwaysOnTop.state:%zd",state);
+}
 @end

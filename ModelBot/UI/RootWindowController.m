@@ -16,6 +16,7 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    
     self.analyticsItem.image = [NSImage imageNamed:@"line_graph"];
     self.analyticsItem.label = @"统计";
     self.analyticsItem.minSize = CGSizeMake(60, 40);
@@ -24,7 +25,6 @@
 
     self.configItem.label = @"设置";
     self.configItem.minSize = CGSizeMake(60, 40);
-    
 }
 
 - (IBAction)showAnalytics:(id)sender {
