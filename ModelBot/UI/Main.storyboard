@@ -828,7 +828,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="RootWindowController" sceneMemberID="viewController">
-                    <window key="window" title="ModelBot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="utilityWindow" appearanceType="aqua" id="IQv-IB-iLA" userLabel="ModelBot">
+                    <window key="window" title="ModelBot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="utilityWindow" appearanceType="aqua" id="IQv-IB-iLA" userLabel="ModelBot">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" transient="YES" fullScreenPrimary="YES"/>
                         <rect key="contentRect" x="574" y="389" width="480" height="270"/>
@@ -890,7 +890,7 @@
                                     <constraint firstAttribute="width" constant="100" id="29K-Rf-u4v"/>
                                     <constraint firstAttribute="height" constant="20" id="bqI-I8-6b3"/>
                                 </constraints>
-                                <popUpButtonCell key="cell" type="push" title="ObjectMapper[Swift]" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="103" imageScaling="proportionallyDown" inset="2" selectedItem="5J4-y5-d1m" id="7Yh-sU-8NW">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="7Yh-sU-8NW">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="xMN-Sc-7eh">
@@ -902,7 +902,7 @@
                                             <menuItem title="Swift" tag="102" id="gv6-5T-HE8">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
-                                            <menuItem title="ObjectMapper[Swift]" state="on" tag="103" id="5J4-y5-d1m">
+                                            <menuItem title="ObjectMapper[Swift]" tag="103" id="5J4-y5-d1m">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                         </items>
