@@ -47,7 +47,7 @@
 
 - (void)setupService
 {
-    jsonMate = [[JSONParseMate alloc] init];
+    jsonMate = [[JSONParseBase alloc] init];
     jsonMate.delegate = self;
 }
 

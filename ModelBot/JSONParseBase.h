@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
+typedef NS_ENUM(NSUInteger, LanguageType){
+    LanguageTypeObjectiveC,
+    LangageTypeSwift,
+};
+
 @protocol JSONParseDelegate <NSObject>
 
 - (void)parseMateDidStartGenerateCode;
@@ -17,7 +22,7 @@
 
 @end
 
-@interface JSONParseMate : NSObject
+@interface JSONParseBase : NSObject
 {
     NSString  *modelName;
     ModelType  modelType;
@@ -26,5 +31,7 @@
 @property (nonatomic, weak) id<JSONParseDelegate> delegate;
 
 - (void)generateModelWithName:(NSString *)fileName andType:(ModelType)classType ofJSONContext:(NSDictionary *)jsonDict;
+
+- (NSString *)templeteTagReplace:(NSString *)content;
 
 @end

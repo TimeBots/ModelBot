@@ -26,6 +26,8 @@
 		8B329D911AB90BAD0020838D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B329D901AB90BAD0020838D /* AppKit.framework */; };
 		8B49E0B51C5757480063A6F9 /* Swift.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B49E0B41C5757480063A6F9 /* Swift.tpl */; };
 		8B6618781BBCE68C007A1E44 /* ModelFunctionsMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6618771BBCE68C007A1E44 /* ModelFunctionsMate.m */; };
+		8B7543F01CA3E74900224DE1 /* JSONObjectNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7543EF1CA3E74900224DE1 /* JSONObjectNSObject.m */; };
+		8B7543F31CA3E75C00224DE1 /* JSONObjectMantle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7543F21CA3E75C00224DE1 /* JSONObjectMantle.m */; };
 		8B92B2D61AB7F4F300F50595 /* Source_NSObject.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */; };
 		8B92B2D81AB7F4FE00F50595 /* Source_MTLModel.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */; };
 		8B92B2E81AB81B6A00F50595 /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B92B2E71AB81B6A00F50595 /* JSONSyntaxHighlight.m */; };
@@ -37,7 +39,8 @@
 		8BB3CADC1B5514C5001E770B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CADB1B5514C5001E770B /* Main.storyboard */; };
 		8BB3CADD1B5514C5001E770B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3CADB1B5514C5001E770B /* Main.storyboard */; };
 		8BDA4B6B1B5519BE0051C745 /* RootWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDA4B6A1B5519BE0051C745 /* RootWindowController.m */; };
-		8BE19E3F1B54DAAB00ED50AB /* JSONParseMate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE19E3E1B54DAAB00ED50AB /* JSONParseMate.m */; };
+		8BE19E3F1B54DAAB00ED50AB /* JSONParseBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE19E3E1B54DAAB00ED50AB /* JSONParseBase.m */; };
+		8BF9EAA11CA29A4B00509B6F /* JSONObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EAA01CA29A4B00509B6F /* JSONObjectMapper.m */; };
 		8BFE80D81C5715C9005C842B /* ObjectMapper_Swift.tpl in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE80D71C5715C9005C842B /* ObjectMapper_Swift.tpl */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,10 @@
 		8B49E0B41C5757480063A6F9 /* Swift.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Swift.tpl; sourceTree = "<group>"; };
 		8B6618761BBCE68C007A1E44 /* ModelFunctionsMate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelFunctionsMate.h; path = ModelBot/Modeltools/ModelFunctionsMate.h; sourceTree = SOURCE_ROOT; };
 		8B6618771BBCE68C007A1E44 /* ModelFunctionsMate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelFunctionsMate.m; path = ModelBot/Modeltools/ModelFunctionsMate.m; sourceTree = SOURCE_ROOT; };
+		8B7543EE1CA3E74900224DE1 /* JSONObjectNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONObjectNSObject.h; path = ModelBot/JSONObjectNSObject.h; sourceTree = SOURCE_ROOT; };
+		8B7543EF1CA3E74900224DE1 /* JSONObjectNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONObjectNSObject.m; path = ModelBot/JSONObjectNSObject.m; sourceTree = SOURCE_ROOT; };
+		8B7543F11CA3E75C00224DE1 /* JSONObjectMantle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONObjectMantle.h; path = ModelBot/JSONObjectMantle.h; sourceTree = SOURCE_ROOT; };
+		8B7543F21CA3E75C00224DE1 /* JSONObjectMantle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONObjectMantle.m; path = ModelBot/JSONObjectMantle.m; sourceTree = SOURCE_ROOT; };
 		8B92B2D51AB7F4F300F50595 /* Source_NSObject.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_NSObject.tpl; sourceTree = "<group>"; };
 		8B92B2D71AB7F4FE00F50595 /* Source_MTLModel.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Source_MTLModel.tpl; sourceTree = "<group>"; };
 		8B92B2E61AB81B6A00F50595 /* JSONSyntaxHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSyntaxHighlight.h; sourceTree = "<group>"; };
@@ -92,8 +99,10 @@
 		8BB3CADB1B5514C5001E770B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8BDA4B691B5519BE0051C745 /* RootWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootWindowController.h; sourceTree = "<group>"; };
 		8BDA4B6A1B5519BE0051C745 /* RootWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootWindowController.m; sourceTree = "<group>"; };
-		8BE19E3D1B54DAAB00ED50AB /* JSONParseMate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONParseMate.h; path = ModelBot/JSONParseMate.h; sourceTree = SOURCE_ROOT; };
-		8BE19E3E1B54DAAB00ED50AB /* JSONParseMate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONParseMate.m; path = ModelBot/JSONParseMate.m; sourceTree = SOURCE_ROOT; };
+		8BE19E3D1B54DAAB00ED50AB /* JSONParseBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONParseBase.h; path = ModelBot/JSONParseBase.h; sourceTree = SOURCE_ROOT; };
+		8BE19E3E1B54DAAB00ED50AB /* JSONParseBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONParseBase.m; path = ModelBot/JSONParseBase.m; sourceTree = SOURCE_ROOT; };
+		8BF9EA9F1CA29A4B00509B6F /* JSONObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONObjectMapper.h; path = ModelBot/JSONObjectMapper.h; sourceTree = SOURCE_ROOT; };
+		8BF9EAA01CA29A4B00509B6F /* JSONObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONObjectMapper.m; path = ModelBot/JSONObjectMapper.m; sourceTree = SOURCE_ROOT; };
 		8BFE80D71C5715C9005C842B /* ObjectMapper_Swift.tpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ObjectMapper_Swift.tpl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,8 +209,14 @@
 		8B240A191AB6C42A002C7B7B /* JSONParse */ = {
 			isa = PBXGroup;
 			children = (
-				8BE19E3D1B54DAAB00ED50AB /* JSONParseMate.h */,
-				8BE19E3E1B54DAAB00ED50AB /* JSONParseMate.m */,
+				8BE19E3D1B54DAAB00ED50AB /* JSONParseBase.h */,
+				8BE19E3E1B54DAAB00ED50AB /* JSONParseBase.m */,
+				8BF9EA9F1CA29A4B00509B6F /* JSONObjectMapper.h */,
+				8BF9EAA01CA29A4B00509B6F /* JSONObjectMapper.m */,
+				8B7543EE1CA3E74900224DE1 /* JSONObjectNSObject.h */,
+				8B7543EF1CA3E74900224DE1 /* JSONObjectNSObject.m */,
+				8B7543F11CA3E75C00224DE1 /* JSONObjectMantle.h */,
+				8B7543F21CA3E75C00224DE1 /* JSONObjectMantle.m */,
 			);
 			path = JSONParse;
 			sourceTree = "<group>";
@@ -407,8 +422,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7543F31CA3E75C00224DE1 /* JSONObjectMantle.m in Sources */,
 				8B02090A1B56322500947EBC /* AnalyticsManager.m in Sources */,
-				8BE19E3F1B54DAAB00ED50AB /* JSONParseMate.m in Sources */,
+				8BE19E3F1B54DAAB00ED50AB /* JSONParseBase.m in Sources */,
+				8BF9EAA11CA29A4B00509B6F /* JSONObjectMapper.m in Sources */,
 				8BDA4B6B1B5519BE0051C745 /* RootWindowController.m in Sources */,
 				8BA9D4ED1BBFDE03000135F8 /* PreferenceController.m in Sources */,
 				8B1C5F2B1B54FBA100B23290 /* RootViewController.m in Sources */,
@@ -418,6 +435,7 @@
 				8BA9D4F11BC01956000135F8 /* MPreference.m in Sources */,
 				8B92B2ED1AB822D900F50595 /* JSONTextview.m in Sources */,
 				8B6618781BBCE68C007A1E44 /* ModelFunctionsMate.m in Sources */,
+				8B7543F01CA3E74900224DE1 /* JSONObjectNSObject.m in Sources */,
 				8B2409F81AB6B192002C7B7B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

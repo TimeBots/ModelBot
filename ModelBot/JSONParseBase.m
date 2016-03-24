@@ -6,10 +6,11 @@
 //  Copyright (c) 2015年 Timebot. All rights reserved.
 //
 
-#import "JSONParseMate.h"
+#import "JSONParseBase.h"
 #import "AnalyticsManager.h"
-
-@implementation JSONParseMate
+#import <objc/runtime.h>
+#import "PrefixHeader.pch"
+@implementation JSONParseBase
 
 @synthesize delegate;
 
@@ -39,6 +40,8 @@
         default:
             break;
     }
+    
+    [self parsePropertyTypes:jsonDict];
     
 }
 
@@ -378,6 +381,48 @@
     content = [content stringByReplacingOccurrencesOfString:@"{$copyright}" withString:preference.Copyright];
     
     return content;
+}
+
+- (NSDictionary *)parsePropertyTypes:(NSDictionary *)sourceDict ofLanguageType:(LanguageType)langType{
+    NSArray *keys = sourceDict.allKeys;
+    NSMutableDictionary *propertyDict = [NSMutableDictionary dictionary];
+    
+    for (NSInteger i=0; i< keys.count; i++)
+    {
+        NSString *dictKey = keys[i];
+        id dictValue = sourceDict[dictKey];
+        
+        if ([dictKey isEqualToString:@"id"]) {
+            dictKey = [dictKey capitalizedString];
+        }
+        
+        NSLog(@"typeof:%@--value:%@",NSStringFromClass([dictValue class]),dictValue);
+        
+        //Number
+        if ([dictValue isKindOfClass:[NSNumber class]]){
+            
+            //假设都为float类型
+            CGFloat doubleValue = [dictValue doubleValue];
+            
+            //检测Float类型
+            if ([ModelFunctionsMate checkDouble:doubleValue]){
+                propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"double" : @"Double";
+            }else{
+                propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"NSInteger" : @"Int";
+            }
+        }else if([dictValue isKindOfClass:[NSArray class]]){
+            //封装array类型
+            propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"NSArray" : @"[AnyObject]?";
+        }else if([dictValue isKindOfClass:[NSDictionary class]]){
+            //封装dictionary类型
+            propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"NSDictionary" : @"[AnyObject:AnyObject]?";
+        }else{
+            //封装string类型
+            propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"NSString" : @"String?";
+        }
+    }
+    
+    return propertyDict;
 }
 
 @end

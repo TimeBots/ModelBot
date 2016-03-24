@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "JSONParseMate.h"
+#import "JSONParseBase.h"
 #import "JSONTextview.h"
 
 @interface RootViewController : NSViewController<JSONParseDelegate>
@@ -15,7 +15,7 @@
 @property (weak) IBOutlet NSView *containerView;
 @property (weak) IBOutlet NSTextFieldCell *classTextField;
 @property (weak) IBOutlet NSPopUpButton *typePopButton;
-@property (nonatomic, strong) JSONParseMate *jsonMate;
+@property (nonatomic, strong) JSONParseBase *jsonMate;
 @property (nonatomic, strong) NSDictionary *jsonDict;
 @property (unsafe_unretained) IBOutlet JSONTextview *jsonTextView;
 @property (weak) IBOutlet NSButtonCell *checkButton;
