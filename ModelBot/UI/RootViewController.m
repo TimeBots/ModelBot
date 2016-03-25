@@ -8,6 +8,10 @@
 
 #import "RootViewController.h"
 #import "AnalyticsManager.h"
+#import "JSONObjectNSObject.h"
+#import "JSONObjectMapper.h"
+#import "JSONObjectMantle.h"
+#import "JSONObjectSwift.h"
 
 @interface RootViewController ()
 
@@ -164,9 +168,7 @@
 - (IBAction)handleGenerate:(id)sender {
     
     if ([self checkInput])
-    {        
-        NSLog(@"self.jsonText:%@",self.jsonTextView.string);
-        
+    {
         NSString *fileName = self.classTextField.stringValue;
         NSString *json = self.jsonTextView.string;
         jsonDict = [self convertJSONToDictionary:json];
@@ -176,6 +178,30 @@
         if(isValid)
         {
             ModelType modelType = [self checkModelType];
+            switch (modelType) {
+                case ModelType_NSObject:{
+                    JSONObjectNSObject *nsobjectGenerator = [JSONObjectNSObject shareInstance];
+                    [nsobjectGenerator getnerateModelWithDictionary:jsonDict];
+                    break;
+                }
+                case ModelType_MTLModel:{
+                    JSONObjectMantle *mtlmodelGenerator = [JSONObjectMantle shareInstance];
+                    [mtlmodelGenerator getnerateModelWithDictionary:jsonDict];
+                    break;
+                }
+                case ModelType_Swift:{
+                    JSONObjectSwift *swiftGenerator = [JSONObjectSwift shareInstance];
+                    [swiftGenerator getnerateModelWithDictionary:jsonDict];
+                    break;
+                }
+                case ModelType_ObjectMapper:{
+                    JSONObjectMapper *objectMapperGenerator = [JSONObjectMapper shareInstance];
+                    [objectMapperGenerator getnerateModelWithDictionary:jsonDict];
+                    break;
+                }
+                default:
+                    break;
+            }
             [jsonMate generateModelWithName:fileName andType:modelType ofJSONContext:jsonDict];
         }
         else

@@ -1,14 +1,13 @@
 //
-//  JSONObjectMapper.h
+//  JSONObjectSwift.h
 //  ModelBot
 //
-//  Created by welsonla on 16/3/23.
+//  Created by welsonla on 16/3/25.
 //  Copyright © 2016年 Timebot. All rights reserved.
 //
 
 #import "JSONParseBase.h"
 
-@interface JSONObjectMapper : JSONParseBase
-
+@interface JSONObjectSwift : JSONParseBase
 
 @end

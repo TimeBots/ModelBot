@@ -10,4 +10,8 @@
 
 @implementation JSONObjectNSObject
 
+- (void)getnerateModelWithDictionary:(NSDictionary *)json{
+    mapedDict = [self parsePropertyTypes:json ofLanguageType:LanguageTypeObjectiveC];
+}
+
 @end

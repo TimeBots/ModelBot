@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSDictionary *jsonDict;
 @property (unsafe_unretained) IBOutlet JSONTextview *jsonTextView;
 @property (weak) IBOutlet NSButtonCell *checkButton;
+@property (weak) IBOutlet NSButtonCell *nscodingButton;
 
 - (IBAction)handleGenerate:(id)sender;
 

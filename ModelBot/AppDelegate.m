@@ -64,14 +64,17 @@
 - (IBAction)handleWindowState:(id)sender {
     NSMenuItem *alwaysOnTopItem = sender;
     NSInteger state = alwaysOnTopItem.state;
+    NSWindow *window = [NSApp mainWindow];
     if (state == 1) {
         alwaysOnTopItem.state = 0;
+        window.hidesOnDeactivate = YES;
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kAlwaysOnTop];
     }else{
+        alwaysOnTopItem.state = 1;
+        window.hidesOnDeactivate = NO;
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAlwaysOnTop];
     }
 
-    
     NSLog(@"alwaysOnTop.state:%zd",state);
 }
 @end

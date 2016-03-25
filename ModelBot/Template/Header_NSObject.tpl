@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface {$filename} : NSObject
+@interface {$filename} : NSObject<NSCoding>
 
 %@
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -898,11 +899,11 @@
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECS-Oo-UUw">
                                 <rect key="frame" x="20" y="96" width="595" height="318"/>
                                 <clipView key="contentView" id="3MF-qt-9Vj">
-                                    <rect key="frame" x="1" y="1" width="593" height="316"/>
+                                    <rect key="frame" x="1" y="1" width="578" height="316"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Ntz-sL-Kgw" customClass="JSONTextview">
-                                            <rect key="frame" x="0.0" y="0.0" width="593" height="316"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="578" height="316"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="578" height="316"/>
@@ -945,7 +946,7 @@
                                     <action selector="handleGenerate:" target="uau-oR-Zap" id="yHz-0e-eIg"/>
                                 </connections>
                             </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="F32-rn-bBi">
+                            <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F32-rn-bBi">
                                 <rect key="frame" x="18" y="29" width="93" height="18"/>
                                 <buttonCell key="cell" type="check" title="All as string" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Fz9-aT-5ag">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -955,12 +956,20 @@
                                     <action selector="handleCheck:" target="uau-oR-Zap" id="3cN-JV-O4o"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="knO-WO-2bS">
+                                <rect key="frame" x="18" y="29" width="84" height="18"/>
+                                <buttonCell key="cell" type="check" title="NSCoding" bezelStyle="regularSquare" imagePosition="left" inset="2" id="vFh-rV-jPO">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ECS-Oo-UUw" firstAttribute="top" secondItem="Rha-54-mmH" secondAttribute="bottom" constant="30" id="1y5-iK-E8v"/>
                             <constraint firstItem="ECS-Oo-UUw" firstAttribute="top" secondItem="IBe-5f-PE0" secondAttribute="bottom" constant="-338" id="2VT-fV-nJK"/>
                             <constraint firstItem="uPu-ed-dHa" firstAttribute="leading" secondItem="Mgs-Mg-zbC" secondAttribute="trailing" constant="31" id="33R-hS-oT0"/>
                             <constraint firstItem="3ru-Wg-sVf" firstAttribute="trailing" secondItem="ECS-Oo-UUw" secondAttribute="trailing" id="6HK-TM-L2Q"/>
+                            <constraint firstItem="knO-WO-2bS" firstAttribute="leading" secondItem="F32-rn-bBi" secondAttribute="leading" id="9Zw-s1-gDY"/>
                             <constraint firstItem="uPu-ed-dHa" firstAttribute="top" secondItem="3ru-Wg-sVf" secondAttribute="bottom" constant="20" id="Bsz-DL-p8W"/>
                             <constraint firstAttribute="trailing" secondItem="IBe-5f-PE0" secondAttribute="trailing" constant="10" id="EVT-gz-1kH"/>
                             <constraint firstItem="IBe-5f-PE0" firstAttribute="leading" secondItem="s6d-1U-eFz" secondAttribute="leading" constant="10" id="Gaq-Xt-UtF"/>
@@ -976,6 +985,7 @@
                             <constraint firstItem="3ru-Wg-sVf" firstAttribute="top" secondItem="ECS-Oo-UUw" secondAttribute="bottom" constant="10" id="lPp-fa-A45"/>
                             <constraint firstItem="F32-rn-bBi" firstAttribute="centerY" secondItem="uPu-ed-dHa" secondAttribute="centerY" constant="2.5" id="mEl-dP-MVL"/>
                             <constraint firstItem="Mgs-Mg-zbC" firstAttribute="centerY" secondItem="uPu-ed-dHa" secondAttribute="centerY" id="mIh-TP-290"/>
+                            <constraint firstItem="knO-WO-2bS" firstAttribute="centerY" secondItem="F32-rn-bBi" secondAttribute="centerY" id="qDo-Ka-xdT"/>
                             <constraint firstItem="ECS-Oo-UUw" firstAttribute="bottom" secondItem="IBe-5f-PE0" secondAttribute="bottom" constant="-20" id="wcu-Se-gEK"/>
                             <constraint firstAttribute="trailing" secondItem="uPu-ed-dHa" secondAttribute="trailing" constant="20" id="xFY-cW-lbd"/>
                         </constraints>
@@ -985,6 +995,7 @@
                         <outlet property="classTextField" destination="J0V-GM-uZk" id="NFD-kY-WaA"/>
                         <outlet property="containerView" destination="IBe-5f-PE0" id="f1L-lF-Kza"/>
                         <outlet property="jsonTextView" destination="Ntz-sL-Kgw" id="unK-D1-KQp"/>
+                        <outlet property="nscodingButton" destination="vFh-rV-jPO" id="CBy-Rq-k2s"/>
                         <outlet property="typePopButton" destination="Mgs-Mg-zbC" id="Fgs-8z-W7v"/>
                     </connections>
                 </viewController>

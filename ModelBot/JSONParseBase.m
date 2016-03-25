@@ -10,9 +10,22 @@
 #import "AnalyticsManager.h"
 #import <objc/runtime.h>
 #import "PrefixHeader.pch"
+
 @implementation JSONParseBase
 
 @synthesize delegate;
+
+
++ (instancetype)shareInstance{
+    static id selfclass = nil;
+    dispatch_once_t token;
+    dispatch_once(&token, ^{
+        selfclass = [[self alloc] init];
+    });
+    
+    return selfclass;
+}
+
 
 - (void)generateModelWithName:(NSString *)fileName andType:(ModelType)classType ofJSONContext:(NSDictionary *)jsonDict
 {
@@ -35,79 +48,14 @@
             break;
         case ModelType_Swift:
         case ModelType_ObjectMapper:
-            [self generateObjectMapperSource:jsonDict];
+//            [self generateObjectMapperSource:jsonDict];
             break;
         default:
             break;
     }
     
-    [self parsePropertyTypes:jsonDict];
-    
-}
-
-- (void)generateObjectMapperSource:(NSDictionary *)jsonDict{
-    NSArray *modelKeys = jsonDict.allKeys;
-    NSArray *jsonValues = jsonDict.allValues;
-    
-    NSMutableString *properties = [[NSMutableString alloc] init];
-    NSMutableString *mapper = [[NSMutableString alloc] init];
-    
-    for (NSInteger i=0; i< modelKeys.count; i++)
-    {
-        id dictValue = jsonValues[i];
-        NSString *dictKey = modelKeys[i];
-        
-        if ([dictKey isEqualToString:@"id"]) {
-            dictKey = [dictKey capitalizedString];
-        }
-    
-        //mapper
-        [mapper appendFormat:@"\t\t%@ <- map[\"%@\"]\n",dictKey,dictKey];
-        
-        //Number
-        if ([dictValue isKindOfClass:[NSNumber class]])
-        {
-            
-            //假设都为float类型
-            CGFloat doubleValue = [dictValue doubleValue];
-            
-            //检测Float类型
-            if ([ModelFunctionsMate checkDouble:doubleValue])
-            {
-                [properties appendFormat:@"\tvar %@:Double?\n",dictKey];
-            }
-            else
-            {
-                [properties appendFormat:@"\tvar %@:Int?\n",dictKey];
-            }
-            
-            
-        }
-        else if([dictValue isKindOfClass:[NSArray class]])
-        {
-            //封装array类型
-            [properties appendFormat:@"\tvar %@:[AnyObject]?\n",dictKey];
-        }
-        else if([dictValue isKindOfClass:[NSDictionary class]])
-        {
-            //封装dictionary类型
-            [properties appendFormat:@"\tvar %@:[String:AnyObject]?\n",dictKey];
-        }
-        else
-        {
-            //封装string类型
-            [properties appendFormat:@"\tvar %@:String?\n",dictKey];
-        }
-    }
-    
-    //write to source file
-    [self writeToSwiftFile:@[properties,mapper]];
-    
-    if (delegate && [delegate respondsToSelector:@selector(parseMateDidFinishGenerateCode)])
-    {
-        [delegate parseMateDidFinishGenerateCode];
-    }
-
+    mapedDict = [self parsePropertyTypes:jsonDict ofLanguageType:LanguageTypeObjectiveC];
+    NSString *encodeString = [self getObjcEncoder];
 }
 
 - (void)generateSourceContext:(NSDictionary *)jsonDict{
@@ -331,7 +279,6 @@
         case ModelType_ObjectMapper:
             templateName = SwiftObjectMapper;
             break;
-            
         default:
             break;
     }
@@ -361,6 +308,11 @@
     
     //统计头文件行数
     [AnalyticsManager calLines:templateText];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(parseMateDidFinishGenerateCode)])
+    {
+        [self.delegate parseMateDidFinishGenerateCode];
+    }
 }
 
 - (NSString *)templeteTagReplace:(NSString *)content{
@@ -383,7 +335,7 @@
     return content;
 }
 
-- (NSDictionary *)parsePropertyTypes:(NSDictionary *)sourceDict ofLanguageType:(LanguageType)langType{
+- (NSDictionary *)parsePropertyTypes:(NSDictionary *)sourceDict ofLanguageType:(LanguageType)lanType{
     NSArray *keys = sourceDict.allKeys;
     NSMutableDictionary *propertyDict = [NSMutableDictionary dictionary];
     
@@ -396,8 +348,6 @@
             dictKey = [dictKey capitalizedString];
         }
         
-        NSLog(@"typeof:%@--value:%@",NSStringFromClass([dictValue class]),dictValue);
-        
         //Number
         if ([dictValue isKindOfClass:[NSNumber class]]){
             
@@ -406,23 +356,169 @@
             
             //检测Float类型
             if ([ModelFunctionsMate checkDouble:doubleValue]){
+                //Double
                 propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"double" : @"Double";
             }else{
+                //Int
                 propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"NSInteger" : @"Int";
             }
         }else if([dictValue isKindOfClass:[NSArray class]]){
-            //封装array类型
+            //Array
             propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"NSArray" : @"[AnyObject]?";
         }else if([dictValue isKindOfClass:[NSDictionary class]]){
-            //封装dictionary类型
+            //Dictionary
             propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"NSDictionary" : @"[AnyObject:AnyObject]?";
         }else{
-            //封装string类型
+            //String
             propertyDict[dictKey] = langType == LanguageTypeObjectiveC ? @"NSString" : @"String?";
         }
     }
     
     return propertyDict;
+}
+
+
+#pragma mark - Property Syntax
+- (void)getPropertySyntax{
+    
+}
+
+#pragma mark - Encoder
+
+/**
+ *  Objective-C Encoder
+ *
+ *  @return EncoderContent
+ */
+- (NSString *)getObjcEncoder{
+    NSString *encodeContent = [NSString string];
+    NSArray *keys = mapedDict.allKeys;
+    for (NSString *key in keys) {
+        NSString *typeName = mapedDict[key];
+        NSString *encodeLine;
+        if ([typeName isEqualToString:@"NSInteger"])
+        {
+            encodeLine = [NSString stringWithFormat:@"[aCoder encodeInteger:_%@ forKey:@\"%@\"];\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"double"])
+        {
+            encodeLine = [NSString stringWithFormat:@"[aCoder encodeDouble:_%@ forKey:@\"%@\"];\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"Boolean"])
+        {
+            encodeLine = [NSString stringWithFormat:@"[aCoder encodeBool:_%@ forKey:@\"%@\"];\n\t\t",key,key];
+        }else{
+            encodeLine = [NSString stringWithFormat:@"[aCoder encodeObject:_%@ forKey:@\"%@\"];\n\t\t",key,key];
+        }
+        
+        encodeContent = [encodeContent stringByAppendingString:encodeLine];
+        
+    }
+    
+    return encodeContent;
+}
+
+/**
+ *  Swift Encoder
+ *
+ *  @return EncoderContent
+ */
+- (NSString *)getSwiftEncoder{
+    NSString *encodeContent;
+    NSArray *keys = mapedDict.allKeys;
+    for (NSString *key in keys) {
+        NSString *typeName = mapedDict[key];
+        NSString *encodeLine;
+        if ([typeName isEqualToString:@"Int"])
+        {
+            encodeLine = [NSString stringWithFormat:@"aCoder.encodeInteger(%@, forKey: \"%@\");\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"Double"])
+        {
+            encodeLine = [NSString stringWithFormat:@"aCoder.encodeDouble(%@, forKey: \"%@\");\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"Bool"])
+        {
+            encodeLine = [NSString stringWithFormat:@"aCoder.encodeBool(%@, forKey: \"%@\");\n\t\t",key,key];
+        }
+        else
+        {
+            encodeLine = [NSString stringWithFormat:@"[aCoder encodeObject:_%@ forKey:@\"%@\"];\n\t\t",key,key];
+        }
+        
+        encodeContent = [encodeContent stringByAppendingString:encodeLine];
+    }
+    
+    return encodeContent;
+}
+
+
+#pragma mark - Decoder
+- (NSString *)getObjcDecoder{
+    NSString *encodeContent = [NSString string];
+    NSArray *keys = mapedDict.allKeys;
+    for (NSString *key in keys) {
+        NSString *typeName = mapedDict[key];
+        NSString *encodeLine;
+        if ([typeName isEqualToString:@"NSInteger"])
+        {
+            encodeLine = [NSString stringWithFormat:@"_%@ = [aDecoder decodeIntegerForKey:@\"%@\"];\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"double"])
+        {
+            encodeLine = [NSString stringWithFormat:@"_%@ = [aDecoder decodeDoubleForKey:@\"%@\"];\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"Boolean"])
+        {
+            encodeLine = [NSString stringWithFormat:@"_%@ = [aDecoder decodeBoolForKey:@\%@\"];\n\t\t",key,key];
+        }
+        else
+        {
+            encodeLine = [NSString stringWithFormat:@"_%@ = [aDecoder decodeObjectForKey:@\"%@\"];\n\t\t",key,key];
+        }
+        
+        encodeContent = [encodeContent stringByAppendingString:encodeLine];
+    }
+    
+    return encodeContent;
+}
+
+
+- (NSString *)getSwiftDecoder{
+    NSString *encodeContent;
+    NSArray *keys = mapedDict.allKeys;
+    for (NSString *key in keys) {
+        NSString *typeName = mapedDict[key];
+        NSString *encodeLine;
+        if ([typeName isEqualToString:@"Int"])
+        {
+            encodeLine = [NSString stringWithFormat:@"%@ = aDecoder.decodeIntegerForKey(\"%@\") as Int\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"Double"])
+        {
+            encodeLine = [NSString stringWithFormat:@"%@ = aDecoder.decodeDoubleForKey(\"%@\")\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"Bool"])
+        {
+            encodeLine = [NSString stringWithFormat:@"%@ = aDecoder.decodeBoolForKey(\"%@\");\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"String"])
+        {
+            encodeLine = [NSString stringWithFormat:@"%@ = aDecoder.decodeObjectForKey(\"%@\") as? String\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"Dictionary"])
+        {
+            encodeLine = [NSString stringWithFormat:@"%@ = (aDecoder.decodeObjectForKey(\"%@\") as? Dictionary<String,String>)!\n\t\t",key,key];
+        }
+        else if([typeName isEqualToString:@"Array"])
+        {
+            encodeLine = [NSString stringWithFormat:@"%@ = aDecoder.decodeObjectForKey(\"%@\") as? [String]!\n\t\t",key,key];
+        }
+        
+        encodeContent = [encodeContent stringByAppendingString:encodeLine];
+    }
+    
+    return encodeContent;
 }
 
 @end
